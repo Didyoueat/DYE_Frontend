@@ -39,16 +39,17 @@ export const BaseTop = styled.div`
 		justify-content: flex-end;
 		margin: 0.3em;
 	}
-	@media (max-width: 707px) {
-		height: 18%;
-	}
-	@media (max-width: 454px) {
-		height: 15%;
+	@media (max-width: 425px) {
+		height: 20%;
 		font-size: 0.8em;
 	}
-	@media (max-width: 365px) {
-		height: 15%;
+	@media (max-width: 375px) {
+		height: 20%;
 		font-size: 0.7em;
+	}
+	@media (max-width: 320px) {
+		height: 20%;
+		font-size: 0.6em;
 	}
 `;
 
@@ -73,16 +74,17 @@ export const BaseLeft = styled.div`
 		border-radius: 50px;
 		color: #ff5439;
 	}
-	@media (max-width: 707px) {
-		height: 82%;
-	}
-	@media (max-width: 454px) {
-		height: 85%;
+	@media (max-width: 425px) {
+		height: 80%;
 		font-size: 0.8em;
 	}
-	@media (max-width: 365px) {
-		height: 85%;
+	@media (max-width: 375px) {
+		height: 80%;
 		font-size: 0.7em;
+	}
+	@media (max-width: 320px) {
+		height: 80%;
+		font-size: 0.6em;
 	}
 `;
 

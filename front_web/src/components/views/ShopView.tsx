@@ -3,6 +3,7 @@ import axios from "axios";
 import ModalContainer from "../pages/Modal";
 import { useSelector } from "react-redux";
 import { rootState } from "../../modules";
+import { ShowMainStyle } from "./ShopViewStyle";
 
 const ShopView = () => {
 	const subpageName = useSelector(
@@ -13,14 +14,17 @@ const ShopView = () => {
 	if (subpageName === "main") subpage = <ShopMain></ShopMain>;
 	else if (subpageName === "edit") subpage = <ShopEdit></ShopEdit>;
 
-	return <div>{subpage}</div>;
+	return <>{subpage}</>;
 };
 
 const ShopMain = () => {
 	return (
-		<div>
-			<ModalContainer></ModalContainer>
-		</div>
+		<ShowMainStyle>
+			<div className="shopInfo">
+				<ModalContainer></ModalContainer>
+			</div>
+			<div className="shopNotice"></div>
+		</ShowMainStyle>
 	);
 };
 

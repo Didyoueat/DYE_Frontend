@@ -8,7 +8,7 @@ export const ModalWrapper = styled.div`
 	max-height: 80%;
 	width: 20rem;
 	height: 80%;
-	padding: 16px;
+	padding: 5rem;
 	border-radius: 10px;
 	text-align: center;
 

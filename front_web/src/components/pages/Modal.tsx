@@ -1,27 +1,8 @@
-import React, { useState } from "react";
-import { ModalWrapper } from "./ModalStyle";
+import React from "react";
 
 type Props = {
 	openModal: boolean;
 	closeModal: () => void;
-};
-
-export const ModalContainer = () => {
-	const [showModal, setShowModal] = useState<boolean>(false);
-
-	const openModal = () => {
-		setShowModal(true);
-	};
-	const closeModal = () => {
-		setShowModal(!showModal);
-	};
-
-	return (
-		<ModalWrapper>
-			<button onClick={openModal}>Click</button>
-			<Modal openModal={showModal} closeModal={closeModal}></Modal>
-		</ModalWrapper>
-	);
 };
 
 export const Modal = (props: Props) => {
@@ -32,11 +13,11 @@ export const Modal = (props: Props) => {
 			{openModal && (
 				<div>
 					<button onClick={closeModal}> x </button>
-					<div>~~~~~ 내용 ~~~~~</div>
+					<div>모달창 테스트</div>
 				</div>
 			)}
 		</div>
 	);
 };
 
-export default ModalContainer;
+export default Modal;

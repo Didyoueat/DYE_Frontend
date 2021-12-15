@@ -1,9 +1,10 @@
 import React, { ChangeEvent, useState } from "react";
 import axios from "axios";
-import ModalContainer from "../pages/Modal";
+import Modal from "../pages/Modal";
 import { useSelector } from "react-redux";
 import { rootState } from "../../modules";
 import { ShowMainStyle } from "./ShopViewStyle";
+import { ModalWrapper } from "../pages/ModalStyle";
 
 const ShopView = () => {
 	const subpageName = useSelector(
@@ -18,12 +19,42 @@ const ShopView = () => {
 };
 
 const ShopMain = () => {
+	const [showInfoModal, setShowInfoModal] = useState<boolean>(false);
+	const [showNoticeModal, setShowNoticeModal] = useState<boolean>(false);
+
+	const handleInfoModal = () => {
+		setShowInfoModal(!showInfoModal);
+	};
+	const handleNoticeModal = () => {
+		setShowNoticeModal(!showNoticeModal);
+	};
+
 	return (
 		<ShowMainStyle>
 			<div className="shopInfo">
-				<ModalContainer></ModalContainer>
+				<h2>매장 정보</h2>
+				<button onClick={handleInfoModal}>수정</button>
+				{showInfoModal && (
+					<ModalWrapper>
+						<Modal
+							openModal={showInfoModal}
+							closeModal={handleInfoModal}
+						></Modal>
+					</ModalWrapper>
+				)}
 			</div>
-			<div className="shopNotice"></div>
+			<div className="shopNotice">
+				<h2>공지사항</h2>
+				<button onClick={handleNoticeModal}>+</button>
+				{showNoticeModal && (
+					<ModalWrapper>
+						<Modal
+							openModal={showNoticeModal}
+							closeModal={handleNoticeModal}
+						></Modal>
+					</ModalWrapper>
+				)}
+			</div>
 		</ShowMainStyle>
 	);
 };

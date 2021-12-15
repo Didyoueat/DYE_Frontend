@@ -12,10 +12,12 @@ export const ShowMainStyle = styled.div`
 		width: 49%;
 		height: 100%;
 		background: #ffffff;
+		border-radius: 1em;
 	}
 	.shopNotice {
 		width: 49%;
 		height: 100%;
 		background: #ffffff;
+		border-radius: 1em;
 	}
 `;

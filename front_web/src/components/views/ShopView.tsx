@@ -11,16 +11,20 @@ const ShopView = () => {
 
 	let subpage = <div></div>;
 	if (subpageName === "main") subpage = <ShopMain></ShopMain>;
+	else if (subpageName === "edit") subpage = <ShopEdit></ShopEdit>;
 
+	return <div>{subpage}</div>;
+};
+
+const ShopMain = () => {
 	return (
 		<div>
-			{subpage}
 			<ModalContainer></ModalContainer>
 		</div>
 	);
 };
 
-const ShopMain = () => {
+const ShopEdit = () => {
 	const [selectedFile, setSelectedFile] = useState<FileList | null>(null);
 	const [imgUrl, setImgUrl] = useState(null);
 
@@ -47,16 +51,13 @@ const ShopMain = () => {
 		<div>
 			<input type="file" onChange={handleFileChange} />
 			<button onClick={handleFileUpload}>업로드</button>
-			<div>
-				{imgUrl && (
-					<img
-						src={imgUrl}
-						alt="sample"
-						style={{ width: "150px", height: "150px" }}
-					/>
-				)}
-			</div>
-			<ModalContainer></ModalContainer>
+			{imgUrl && (
+				<img
+					src={imgUrl}
+					alt="sample"
+					style={{ width: "150px", height: "150px" }}
+				/>
+			)}
 		</div>
 	);
 };

@@ -67,6 +67,8 @@ export const BaseLeft = styled.div`
 		justify-content: space-around;
 	}
 	.left-right {
+		flex: 1;
+		margin: 0.7em 0em 0em 0.7em;
 		background: #ffffff;
 	}
 	.isActive {

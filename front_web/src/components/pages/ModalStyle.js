@@ -11,4 +11,9 @@ export const ModalWrapper = styled.div`
 	padding: 16px;
 	border-radius: 10px;
 	text-align: center;
+
+	.modalActive {
+		background: #f5f4f2;
+		box-shadow: 0px 3px 10px rgba(51, 51, 51, 0.1);
+	}
 `;

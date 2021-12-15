@@ -28,7 +28,7 @@ export const Modal = (props: Props) => {
 	const { openModal, closeModal } = props;
 
 	return (
-		<div className={openModal ? "isActive" : ""}>
+		<div className={openModal ? "modalActive" : ""}>
 			{openModal && (
 				<div>
 					<button onClick={closeModal}> x </button>

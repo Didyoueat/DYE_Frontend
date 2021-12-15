@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const BaseWrappeer = styled.div`
+export const BaseWrapper = styled.div`
 	width: 100%;
 	height: 100%;
 	background: #e5e5e5;

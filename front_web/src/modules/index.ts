@@ -1,10 +1,12 @@
 import { combineReducers } from "redux";
-import dispatchUser from "./user";
-import dispatchPage from "./page";
+import userReducer from "./user";
+import pageReducer from "./page";
 
 const rootReducer = combineReducers({
-	dispatchUser,
-	dispatchPage,
+	userReducer,
+	pageReducer,
 });
 
 export default rootReducer;
+
+export type rootState = ReturnType<typeof rootReducer>;

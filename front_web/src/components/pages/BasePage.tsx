@@ -1,10 +1,10 @@
-import React, { ReactChild, ReactChildren } from "react";
+import React, { ReactChild, useEffect } from "react";
 import {
 	BaseLeft,
 	BaseTopMenu,
 	BaseLeftMenu,
 	BaseTop,
-	BaseWrappeer,
+	BaseWrapper,
 } from "./BasePageStyle";
 import logo from "../../assets/logo.svg";
 import calendar_s from "../../assets/calendar_selected.png";
@@ -19,14 +19,27 @@ import rice_s from "../../assets/rice_selected.png";
 import rice_u from "../../assets/rice_unselected.png";
 import shop_s from "../../assets/shop_selected.png";
 import shop_u from "../../assets/shop_unselected.png";
+import { useDispatch, useSelector } from "react-redux";
+import { rootState } from "../../modules";
+import { changePage } from "../../modules/page";
 
-interface AuxProps {
-	children: ReactChild | ReactChildren;
-}
+type Props = {
+	children: ReactChild;
+};
 
-const BasePage = ({ children }: AuxProps) => {
+const BasePage = ({ children }: Props) => {
+	const dispatch = useDispatch();
+	const pagename = useSelector(
+		(state: rootState) => state.pageReducer.pagename
+	);
+
+	useEffect(() => {
+		if (pagename !== location.pathname.substring(1))
+			dispatch(changePage(location.pathname.substring(1)));
+	});
+
 	return (
-		<BaseWrappeer>
+		<BaseWrapper>
 			<BaseTop>
 				<div className="top-left">
 					<img src={logo} alt="dye_logo" />
@@ -123,7 +136,7 @@ const BasePage = ({ children }: AuxProps) => {
 				</div>
 				<div className="left-right">{children}</div>
 			</BaseLeft>
-		</BaseWrappeer>
+		</BaseWrapper>
 	);
 };
 

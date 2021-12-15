@@ -5,11 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import LoginPage from "./components/pages/LoginPage";
 import NotFoundPage from "./components/pages/NotFoundPage";
-import ShopPage from "./components/pages/ShopPage";
-import SchedulePage from "./components/pages/SchedulePage";
-import OrdersPage from "./components/pages/OrdersPage";
-import UsersPage from "./components/pages/UsersPage";
-import DishesPage from "./components/pages/DishesPage";
+import RenderPage from "./components/pages/RenderPage";
 
 const GlobalStyle = createGlobalStyle`
 	html {
@@ -32,11 +28,11 @@ const App = () => {
 		<BrowserRouter>
 			<GlobalStyle />
 			<Routes>
-				<Route path="/schedule" element={<SchedulePage />} />
-				<Route path="/orders" element={<OrdersPage />} />
-				<Route path="/users" element={<UsersPage />} />
-				<Route path="/dishes" element={<DishesPage />} />
-				<Route path="/shop" element={<ShopPage />} />
+				<Route path="/schedule" element={<RenderPage />} />
+				<Route path="/orders" element={<RenderPage />} />
+				<Route path="/users" element={<RenderPage />} />
+				<Route path="/dishes" element={<RenderPage />} />
+				<Route path="/shop" element={<RenderPage />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/*" element={<NotFoundPage />} />
 			</Routes>

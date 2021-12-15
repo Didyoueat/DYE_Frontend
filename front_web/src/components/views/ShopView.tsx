@@ -1,7 +1,26 @@
 import React, { ChangeEvent, useState } from "react";
 import axios from "axios";
+import ModalContainer from "../pages/Modal";
+import { useSelector } from "react-redux";
+import { rootState } from "../../modules";
 
 const ShopView = () => {
+	const subpageName = useSelector(
+		(state: rootState) => state.pageReducer.subpage
+	);
+
+	let subpage = <div></div>;
+	if (subpageName === "main") subpage = <ShopMain></ShopMain>;
+
+	return (
+		<div>
+			{subpage}
+			<ModalContainer></ModalContainer>
+		</div>
+	);
+};
+
+const ShopMain = () => {
 	const [selectedFile, setSelectedFile] = useState<FileList | null>(null);
 	const [imgUrl, setImgUrl] = useState(null);
 
@@ -37,6 +56,7 @@ const ShopView = () => {
 					/>
 				)}
 			</div>
+			<ModalContainer></ModalContainer>
 		</div>
 	);
 };

@@ -1,24 +1,22 @@
 // 액션 타입 정의
 const PAGE_NAME = "page/PAGE_NAME" as const;
-const PAGE_DEPTH = "page/PAGE_DEPTH" as const;
+const PAGE_SUB = "page/PAGE_SUB" as const;
 
 // 액션 생성 함수 정의
 export const changePage = (pagename: string) => ({ type: PAGE_NAME, pagename });
-export const changeDepth = (depth: string) => ({ type: PAGE_DEPTH, depth });
+export const changeSub = (subpage: string) => ({ type: PAGE_SUB, subpage });
 
-type pageAction =
-	| ReturnType<typeof changePage>
-	| ReturnType<typeof changeDepth>;
+type pageAction = ReturnType<typeof changePage> | ReturnType<typeof changeSub>;
 
 type pageState = {
 	pagename: string;
-	depth: string;
+	subpage: string;
 };
 
 // 초기상태 정의
 const initialState = {
 	pagename: "schedule",
-	depth: "",
+	subpage: "main",
 };
 
 // 리듀서 작성
@@ -32,10 +30,10 @@ export default function pageReducer(
 				...state,
 				pagename: action.pagename,
 			};
-		case PAGE_DEPTH:
+		case PAGE_SUB:
 			return {
 				...state,
-				depth: action.depth,
+				subpage: action.subpage,
 			};
 		default:
 			return state;

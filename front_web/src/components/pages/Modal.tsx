@@ -1,22 +1,42 @@
-import React from "react";
+import React, {
+	// MouseEvent,
+	// MouseEventHandler,
+	ReactChild,
+	ReactChildren,
+	// useState,
+} from "react";
+import { ModalWrapper } from "./ModalStyle";
 
 type Props = {
 	openModal: boolean;
 	closeModal: () => void;
+	children: ReactChild | ReactChildren;
 };
 
 export const Modal = (props: Props) => {
-	const { openModal, closeModal } = props;
+	const { openModal, closeModal, children } = props;
+	// const [modalClicked, setModalClicked] = useState<boolean>(false);
+
+	// const handleModalOff = (
+	// 	e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>
+	// ) => {
+	// 	const target = e.target as HTMLDivElement;
+	// 	if ()
+	// 	else closeModal();
+	// };
 
 	return (
-		<div className={openModal ? "modalActive" : ""}>
+		<ModalWrapper
+			className={openModal ? "modalActive" : ""}
+			// onClick={(e) => handleModalOff(e)}
+		>
 			{openModal && (
 				<div>
 					<button onClick={closeModal}> x </button>
-					<div>모달창 테스트</div>
+					<div>{children}</div>
 				</div>
 			)}
-		</div>
+		</ModalWrapper>
 	);
 };
 

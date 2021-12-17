@@ -1,10 +1,10 @@
-import React, { ChangeEvent, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import Modal from "../pages/Modal";
 import { useSelector } from "react-redux";
 import { rootState } from "../../modules";
 import { ShowMainStyle } from "./ShopViewStyle";
 import { ModalWrapper } from "../pages/ModalStyle";
+import ShopInfoModal from "./ShopInfoModal";
 
 const ShopView = () => {
 	const subpageName = useSelector(
@@ -13,7 +13,6 @@ const ShopView = () => {
 
 	let subpage = <div></div>;
 	if (subpageName === "main") subpage = <ShopMain></ShopMain>;
-	else if (subpageName === "edit") subpage = <ShopEdit></ShopEdit>;
 
 	return <>{subpage}</>;
 };
@@ -39,7 +38,9 @@ const ShopMain = () => {
 						<Modal
 							openModal={showInfoModal}
 							closeModal={handleInfoModal}
-						></Modal>
+						>
+							<ShopInfoModal></ShopInfoModal>
+						</Modal>
 					</ModalWrapper>
 				)}
 			</div>
@@ -51,49 +52,13 @@ const ShopMain = () => {
 						<Modal
 							openModal={showNoticeModal}
 							closeModal={handleNoticeModal}
-						></Modal>
+						>
+							{<div>이것이 바로 공지사항</div>}
+						</Modal>
 					</ModalWrapper>
 				)}
 			</div>
 		</ShowMainStyle>
-	);
-};
-
-const ShopEdit = () => {
-	const [selectedFile, setSelectedFile] = useState<FileList | null>(null);
-	const [imgUrl, setImgUrl] = useState(null);
-
-	const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-		if (e.target.files) setSelectedFile(e.target.files);
-	};
-
-	const handleFileUpload = async () => {
-		const formData = new FormData();
-		if (selectedFile) {
-			formData.append("dish", selectedFile[0]);
-			await axios
-				.post("/v0/users/create", formData, {
-					headers: { "Content-Type": "multipart/form-data" },
-				})
-				.then((res) => {
-					console.log(res.data);
-					setImgUrl(res.data.location);
-				});
-		}
-	};
-
-	return (
-		<div>
-			<input type="file" onChange={handleFileChange} />
-			<button onClick={handleFileUpload}>업로드</button>
-			{imgUrl && (
-				<img
-					src={imgUrl}
-					alt="sample"
-					style={{ width: "150px", height: "150px" }}
-				/>
-			)}
-		</div>
 	);
 };
 

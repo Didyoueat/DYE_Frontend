@@ -20,11 +20,11 @@ const StyledInput = styled.input<SInput>`
 
 export interface InputProps extends SInput {
 	type?: any;
-	name?: any;
+	id?: any;
 }
 
-const Input = ({ type, name }: InputProps) => {
-	return <StyledInput type={type} name={name} />;
+const Input = ({ type, id }: InputProps) => {
+	return <StyledInput type={type} id={id} />;
 };
 
 export default Input;

@@ -1,7 +1,8 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Example from "./components/Example";
+import Example from "./components/pages/Example";
+import Base from "./components/organisms/Base";
 
 const GlobalStyle = createGlobalStyle`
 	html {
@@ -24,7 +25,8 @@ function App() {
 		<BrowserRouter>
 			<GlobalStyle />
 			<Routes>
-				<Route path="/" element={<Example />} />
+				<Route path="/" element={<Base />} />
+				<Route path="/*" element={<Example />} />
 			</Routes>
 		</BrowserRouter>
 	);

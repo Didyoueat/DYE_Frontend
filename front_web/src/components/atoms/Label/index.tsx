@@ -19,18 +19,12 @@ const StyledLabel = styled.label<SLabel>`
 `;
 
 export interface LabelProps extends SLabel {
-	type?: any;
-	name?: any;
-	id?: any;
-	children: any;
+	for?: any;
+	children?: any;
 }
 
-const Label = ({ type, name, id, children }: LabelProps) => {
-	return (
-		<StyledLabel type={type} name={name} id={id}>
-			{children}
-		</StyledLabel>
-	);
+const Label = ({ children, ...props }: LabelProps) => {
+	return <StyledLabel {...props}>{children}</StyledLabel>;
 };
 
 export default Label;

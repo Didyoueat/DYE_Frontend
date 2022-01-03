@@ -1,17 +1,26 @@
 import React from "react";
-import { NavWrapper } from "./styles";
+import Box from "../../atoms/Box";
+import SideNavItem from "../../atoms/SideNavItem";
 
-export interface SideNavProps {
-	to?: any;
-	children?: any;
+interface SSideNav {
+	width?: any;
+	height?: any;
 }
 
-const SideNav = ({ children, ...props }: SideNavProps) => {
-	const location = window.location.pathname;
+export interface SideNavProps extends SSideNav {
+	selected?: any;
+}
+
+const SideNav = ({ width, height, ...props }: SideNavProps) => {
 	return (
-		<NavWrapper to={location} {...props}>
-			{children}
-		</NavWrapper>
+		<Box type="colFlex" width={width} height={height} padding="1em">
+			<SideNavItem to="/" value="일정 관리" />
+			<SideNavItem to="/" value="주문 관리" />
+			<SideNavItem to="/" value="고객 관리" />
+			<SideNavItem to="/" value="리뷰 관리" />
+			<SideNavItem to="/" value="반찬 관리" />
+			<SideNavItem to="/" value="매장 관리" />
+		</Box>
 	);
 };
 

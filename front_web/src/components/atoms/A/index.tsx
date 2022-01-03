@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-// import logo from "../../assets/logo.svg";
 
 interface SA {
 	color?: string;
@@ -30,10 +29,7 @@ const A = ({ to, children }: AProps) => {
 	const location = "/";
 	return (
 		<StyledSpan>
-			<Link to={to ? to : location}>
-				{/* <img src={image ? image : logo} alt={location} /> */}
-				{children}
-			</Link>
+			<Link to={to ? to : location}>{children}</Link>
 		</StyledSpan>
 	);
 };

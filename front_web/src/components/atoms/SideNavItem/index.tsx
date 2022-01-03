@@ -1,21 +1,21 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
-// interface NavProps {
-// 	width?: string;
-// 	height?: string;
-// }
+interface SSideNavItem {
+	width?: string;
+	height?: string;
+}
 
-export const NavWrapper = styled(Link)`
-	box-sizing: border-box;
+const SideNavStyles = css<SSideNavItem>`
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	text-decoration: none;
 	padding: 0.5em 1em;
 	text-align: center;
-	border: 1px solid #ffffff;
+	border: 1px solid #000000;
 	border-radius: 50px;
+	text-decoration: none;
 	color: #333333;
 	img {
 		width: 2.5em;
@@ -40,4 +40,17 @@ export const NavWrapper = styled(Link)`
 		`}
 `;
 
-export default {};
+const StyledLink = styled(Link)<SSideNavItem>`
+	${SideNavStyles}
+`;
+
+export interface SideNavItemProps {
+	to?: any;
+	value?: any;
+}
+
+const SideNavItem = ({ to, value }: SideNavItemProps) => {
+	return <StyledLink to={to}>{value}</StyledLink>;
+};
+
+export default SideNavItem;

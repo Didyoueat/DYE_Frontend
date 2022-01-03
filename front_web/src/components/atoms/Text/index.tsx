@@ -1,17 +1,27 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+type textType = "link" | "title";
+
+export const TextTypes = {
+	link: css`
+		text-decoration: none;
+		color: #333333;
+	`,
+	title: css`
+		color: #333333;
+		font-weight: 700;
+		font-size: 1.2em;
+		text-decoration: none;
+	`,
+};
+
 interface SText {
-	color?: string;
-	// 나중에 style 요소 추가
+	type?: textType;
 }
 
 const TextStyles = css<SText>`
-	${({ color }) =>
-		color &&
-		css`
-			color: #ff5439;
-		`}
+	${({ type }) => TextTypes[type]}
 `;
 
 const StyledText = styled.p<SText>`

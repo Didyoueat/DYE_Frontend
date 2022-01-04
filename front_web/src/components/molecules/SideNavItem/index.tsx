@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
+import Box from "../../atoms/Box";
 
 interface SSideNavItem {
 	width?: string;
@@ -12,6 +13,7 @@ const SideNavStyles = css<SSideNavItem>`
 	flex-flow: row wrap;
 	align-items: center;
 	padding: 0.5em 1em;
+	margin: 1em 0.5em;
 	text-align: center;
 	border: 1px solid #000000;
 	border-radius: 50px;
@@ -21,11 +23,6 @@ const SideNavStyles = css<SSideNavItem>`
 		width: 2.5em;
 		height: 2.5em;
 		padding-right: 0.8em;
-	}
-	.isActive {
-		border: 1px solid #ff5439;
-		border-radius: 50px;
-		color: #ff5439;
 	}
 
 	${({ width }) =>
@@ -46,11 +43,23 @@ const StyledLink = styled(Link)<SSideNavItem>`
 
 export interface SideNavItemProps {
 	to?: any;
-	value?: any;
+	src?: any;
+	val?: any;
 }
 
-const SideNavItem = ({ to, value }: SideNavItemProps) => {
-	return <StyledLink to={to}>{value}</StyledLink>;
+const SideNavItem = ({ to, src, val }: SideNavItemProps) => {
+	const location = window.location.pathname.split("/")[1];
+	return (
+		<Box type="rowFlex">
+			<StyledLink
+				to={to}
+				className={to.split("/")[1] === location ? "isActive" : ""}
+			>
+				<img src={src} alt={to.split("/")[1]} />
+				{val}
+			</StyledLink>
+		</Box>
+	);
 };
 
 export default SideNavItem;

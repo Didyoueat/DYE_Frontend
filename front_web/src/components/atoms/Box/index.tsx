@@ -9,6 +9,11 @@ export const BoxTypes = {
 		flex-flow: row wrap;
 		align-items: center;
 		justify-content: space-between;
+		.isActive {
+			border: 1px solid #ff5439;
+			border-radius: 50px;
+			color: #ff5439;
+		}
 	`,
 	colFlex: css`
 		display: flex;

@@ -11,6 +11,11 @@ const GlobalStyle = createGlobalStyle`
 	body {
 		width: 100%;
 		height: 100%;
+		margin: 0;
+		padding: 0;
+		position: fixed;
+		// overflow: hidden;
+		// touch-action: none;
 	}
 	#root {
 		width: 100%;
@@ -19,13 +24,18 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-	console.log(window.location.pathname);
 	return (
 		<BrowserRouter>
 			<GlobalStyle />
 			<Routes>
 				{/* <Route path="/" element={<Base />} /> */}
-				<Route path="/*" element={<Example />} />
+				<Route path="/" element={<Example />} />
+				<Route path="/schedule" element={<Example />} />
+				<Route path="/orders" element={<Example />} />
+				<Route path="/users" element={<Example />} />
+				<Route path="/reviews" element={<Example />} />
+				<Route path="/dishes" element={<Example />} />
+				<Route path="/shop" element={<Example />} />
 			</Routes>
 		</BrowserRouter>
 	);

@@ -24,11 +24,12 @@ export const BoxTypes = {
 };
 
 interface SBox {
-	height?: any;
 	width?: any;
+	height?: any;
 	borderBottom?: any;
 	background?: any;
 	padding?: any;
+	flexJustify?: any;
 	type?: boxType;
 }
 
@@ -58,6 +59,11 @@ const BoxStyles = css<SBox>`
 		padding &&
 		css`
 			padding: ${padding};
+		`}
+	${({ flexJustify }) =>
+		flexJustify &&
+		css`
+			justify-content: ${flexJustify};
 		`}
 	${({ type }) => BoxTypes[type]}
 `;

@@ -6,7 +6,7 @@ import Button from "../../atoms/Button";
 import Text from "../../atoms/Text";
 import LabelText from "../../molecules/LabelText";
 
-const ShopInfo = () => {
+const ShopNotice = () => {
 	// 일단 더미데이터 사용
 	const shopInfo = useSelector((state: rootState) => state.shopReducer.info);
 	const infoArr = [
@@ -47,4 +47,4 @@ const ShopInfo = () => {
 	);
 };
 
-export default ShopInfo;
+export default ShopNotice;

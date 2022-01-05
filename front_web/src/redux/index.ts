@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import userReducer from "./user";
+import shopReducer from "./shop";
 import pageReducer from "./page";
 
 const rootReducer = combineReducers({
-	userReducer,
+	shopReducer,
 	pageReducer,
 });
 

@@ -3,6 +3,7 @@ import Box from "../../atoms/Box";
 import HomeBtn from "../../molecules/HomeBtn";
 import TopNav from "../../molecules/TopNav";
 import SideNav from "../../molecules/SideNav";
+import PageBox from "../../atoms/PageBox";
 
 // interface SBase {
 // 	// todo: 미디어쿼리 이용해서 컴포넌트들 크기 조절해줘야함

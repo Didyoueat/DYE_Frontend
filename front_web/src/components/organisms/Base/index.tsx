@@ -3,7 +3,6 @@ import Box from "../../atoms/Box";
 import HomeBtn from "../../molecules/HomeBtn";
 import TopNav from "../../molecules/TopNav";
 import SideNav from "../../molecules/SideNav";
-import PageBox from "../../atoms/PageBox";
 
 // interface SBase {
 // 	// todo: 미디어쿼리 이용해서 컴포넌트들 크기 조절해줘야함
@@ -20,7 +19,7 @@ const Base = ({ children }: BaseProps) => {
 				<HomeBtn />
 				<TopNav />
 			</Box>
-			<Box type="rowFlex" width="100%" height="80%" background="#e5e5e5">
+			<Box type="rowFlex" width="100%" height="85%" background="#e5e5e5">
 				<SideNav />
 				{children}
 			</Box>

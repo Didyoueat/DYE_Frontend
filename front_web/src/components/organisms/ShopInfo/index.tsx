@@ -24,14 +24,19 @@ const ShopInfo = () => {
 	];
 
 	return (
-		<Box type="colFlex" width="45%" height="100%" background="#ffffff">
-			<Box type="rowFlex">
+		<Box type="colFlex" width="47.5%" height="100%" background="#ffffff">
+			<Box type="rowFlex" width="100%" height="10%">
 				<Text type="title">매장 정보</Text>
 				<Button>수정</Button>
 			</Box>
-			<Box type="rowFlex">
-				<img src="" alt="대충 대표 사진" />
-				<Box type="colFlex" flexJustify="flex-start">
+			<Box
+				type="rowFlex"
+				width="100%"
+				height="90%"
+				flexAlign="flex-start"
+			>
+				<img src="" alt="대충 대표 사진" width="20%" />
+				<Box type="colFlex" width="80%" flexJustify="flex-start">
 					{infoArr.map((arr) => (
 						<LabelText
 							key={String(arr[1])}

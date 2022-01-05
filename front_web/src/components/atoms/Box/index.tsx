@@ -29,12 +29,15 @@ interface SBox {
 	borderBottom?: any;
 	background?: any;
 	padding?: any;
+	flexAlign?: any;
 	flexJustify?: any;
+	overflow?: any;
 	type?: boxType;
 }
 
 const BoxStyles = css<SBox>`
 	background: #ffffff;
+	${({ type }) => BoxTypes[type]}
 	${({ width }) =>
 		width &&
 		css`
@@ -65,7 +68,16 @@ const BoxStyles = css<SBox>`
 		css`
 			justify-content: ${flexJustify};
 		`}
-	${({ type }) => BoxTypes[type]}
+	${({ flexAlign }) =>
+		flexAlign &&
+		css`
+			align-items: ${flexAlign};
+		`}
+	${({ overflow }) =>
+		overflow &&
+		css`
+			overflow: ${overflow};
+		`}
 `;
 
 const StyledBox = styled.div<SBox>`

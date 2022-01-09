@@ -1,7 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Example from "./components/pages/Example";
+import Temp from "./components/pages/Temp";
 import Shop from "./components/pages/Shop";
 
 const GlobalStyle = createGlobalStyle`
@@ -29,12 +29,12 @@ function App() {
 		<BrowserRouter>
 			<GlobalStyle />
 			<Routes>
-				<Route path="/" element={<Example />} />
-				<Route path="/schedule" element={<Example />} />
-				<Route path="/orders" element={<Example />} />
-				<Route path="/users" element={<Example />} />
-				<Route path="/reviews" element={<Example />} />
-				<Route path="/dishes" element={<Example />} />
+				<Route path="/" element={<Temp />} />
+				<Route path="/schedule" element={<Temp />} />
+				<Route path="/orders" element={<Temp />} />
+				<Route path="/users" element={<Temp />} />
+				<Route path="/reviews" element={<Temp />} />
+				<Route path="/dishes" element={<Temp />} />
 				<Route path="/shop" element={<Shop />} />
 			</Routes>
 		</BrowserRouter>

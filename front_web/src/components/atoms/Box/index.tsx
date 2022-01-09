@@ -26,7 +26,7 @@ export const BoxTypes = {
 interface SBox {
 	width?: any;
 	height?: any;
-	borderBottom?: any;
+	border?: any;
 	background?: any;
 	padding?: any;
 	flexAlign?: any;
@@ -48,10 +48,10 @@ const BoxStyles = css<SBox>`
 		css`
 			height: ${height};
 		`}
-	${({ borderBottom }) =>
-		borderBottom &&
+	${({ border }) =>
+		border &&
 		css`
-			border-bottom: ${borderBottom};
+			border: ${border};
 		`}
 	${({ background }) =>
 		background &&

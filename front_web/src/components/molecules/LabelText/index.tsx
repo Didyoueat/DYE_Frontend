@@ -12,7 +12,7 @@ export interface LabelTextProps {
 const LabelText = ({ label, id, children }: LabelTextProps) => {
 	return (
 		<Box type="rowFlex" flexJustify="flex-start">
-			<Label for={id}>{label}</Label>
+			<Label htmlFor={id}>{label}</Label>
 			<Text id={id} type="bold">
 				&nbsp;{children}
 			</Text>

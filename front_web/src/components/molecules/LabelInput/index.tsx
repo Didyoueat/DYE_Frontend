@@ -11,7 +11,7 @@ export interface LabelInputProps {
 const LabelInput = ({ type, id, children }: LabelInputProps) => {
 	return (
 		<>
-			<Label for={id}>{children}</Label>
+			<Label htmlFor={id}>{children}</Label>
 			<Input type={type} id={id}></Input>
 		</>
 	);

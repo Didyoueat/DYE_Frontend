@@ -19,7 +19,7 @@ const StyledLabel = styled.label<SLabel>`
 `;
 
 export interface LabelProps extends SLabel {
-	for?: any;
+	htmlFor?: any;
 	children?: any;
 }
 

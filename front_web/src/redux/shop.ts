@@ -1,14 +1,9 @@
 // 액션 타입 정의
 const SHOP_ID = "shop/SHOP_ID" as const;
-const SHOP_NAME = "shop/SHOP_NAME" as const;
 const SHOP_INFO = "shop/SHOP_INFO" as const;
 
 // 액션 생성 함수 정의
 export const changeShopId = (shopId: number) => ({ type: SHOP_ID, shopId });
-export const changeShopName = (shopName: string) => ({
-	type: SHOP_NAME,
-	shopName,
-});
 export const changeShopInfo = (shopInfo: Record<string, unknown>) => ({
 	type: SHOP_INFO,
 	shopInfo,
@@ -16,19 +11,49 @@ export const changeShopInfo = (shopInfo: Record<string, unknown>) => ({
 
 type shopAction =
 	| ReturnType<typeof changeShopId>
-	| ReturnType<typeof changeShopName>
 	| ReturnType<typeof changeShopInfo>;
 
 type shopState = {
-	id: number;
-	name: string;
-	info: Record<string, unknown>;
+	shopId: number;
+	info: Record<string, any>; // todo: 데이터 타입 지정
+
+	// shopId: number;
+	// businessNumber: string;
+	// businessName: string;
+	// businessPhone: string;
+	// dayOff: string; // "월금"
+	// address: string;
+	// latitude: number;
+	// longitude: number;
+	// name: string;
+	// phone: string;
+	// origin: string;
+	// content: string;
+	// imageUrl: string;
+	// officeHour: string; // "09:00-18:00"
+	// temporaryDayStart: Date; // type: Date, allow null
+	// temporaryDayEnd: Date; // type: Date, allow null
+	// createdAt: Date;
+	// updatedAt: Date;
+	// dishes: {
+	// 	dishId: number;
+	// 	shopId: number;
+	// 	main: boolean;
+	// 	thumbnail: boolean;
+	// 	title: string;
+	// 	content: string;
+	// 	price: number;
+	// 	count: number;
+	// 	weight: number;
+	// 	imageUrl: string;
+	// 	createdAt: Date;
+	// 	updatedAt: Date;
+	// }[];
 };
 
 // 초기상태 정의
 const initialState = {
-	id: NaN,
-	name: "",
+	shopId: NaN,
 
 	// 임시로 쓸 더미데이터 ! 파싱하는 훅 만들어서 로그인할 때 데이터 dispatch 할 수 있게 만들자
 	info: {
@@ -36,7 +61,7 @@ const initialState = {
 		businessNumber: "17-1234-1234", // type: string, length: 30
 		businessName: "동찬이네", // type: string, length: 50
 		businessPhone: "02-123-1234", // type: string, length: 20
-		dayOff: 9, // type: int, 9 => 0b0000101 금요일, 일요일 휴무
+		dayOff: 9, // type: int, 9 => 0b00001001 목요일, 일요일 휴무
 		address: "서울시 서초구 강남대로 327, 대륭서초타워 4층", // type: string, length: 100
 		latitude: 37.123, // type: float
 		longitude: 127.123, // type: float
@@ -78,12 +103,7 @@ export default function shopReducer(
 		case SHOP_ID:
 			return {
 				...state,
-				id: action.shopId,
-			};
-		case SHOP_NAME:
-			return {
-				...state,
-				name: action.shopName,
+				shopId: action.shopId,
 			};
 		case SHOP_INFO:
 			return {

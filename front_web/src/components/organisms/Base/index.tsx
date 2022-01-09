@@ -15,7 +15,7 @@ interface BaseProps {
 const Base = ({ children }: BaseProps) => {
 	return (
 		<Box type="colFlex" width="100%" height="100%" background="#e5e5e5">
-			<Box type="rowFlex" width="100%" borderBottom="1.5px solid #e5e5e5">
+			<Box type="rowFlex" width="100%">
 				<HomeBtn />
 				<TopNav />
 			</Box>

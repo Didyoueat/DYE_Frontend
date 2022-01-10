@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-type boxType = "rowFlex" | "colFlex";
+type boxType = "rowFlex" | "colFlex" | "modal";
 
 export const BoxTypes = {
 	rowFlex: css`
@@ -20,6 +20,20 @@ export const BoxTypes = {
 		flex-flow: column wrap;
 		align-items: center;
 		justify-content: space-between;
+	`,
+	modal: css`
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		max-height: 80%;
+		width: 40em;
+		height: 35em;
+		padding: 1em;
+		border-radius: 10px;
+		text-align: center;
+		background: #f5f4f2;
+		box-shadow: 0px 3px 10px rgba(51, 51, 51, 0.1);
 	`,
 };
 
@@ -86,6 +100,7 @@ const StyledBox = styled.div<SBox>`
 
 export interface BoxProps extends SBox {
 	children?: any;
+	className?: any;
 }
 
 const Box = ({ children, ...props }: BoxProps) => {

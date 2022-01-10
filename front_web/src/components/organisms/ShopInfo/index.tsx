@@ -1,13 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import useModal from "../../../hooks/useModal";
 import { rootState } from "../../../redux";
 import Box from "../../atoms/Box";
 import Button from "../../atoms/Button";
 import Text from "../../atoms/Text";
 import LabelText from "../../molecules/LabelText";
+import Modal from "../../molecules/Modal";
 
 const ShopInfo = () => {
 	// 일단 더미데이터 사용
+	const { showModal, handleModal } = useModal();
 	const shopInfo = useSelector((state: rootState) => state.shopReducer.info);
 	const infoArr = [
 		["매장 이름:", "businessName", shopInfo.businessName],
@@ -27,7 +30,12 @@ const ShopInfo = () => {
 		<Box type="colFlex" width="47.5%" height="100%" background="#ffffff">
 			<Box type="rowFlex" width="100%" height="10%">
 				<Text type="title">매장 정보</Text>
-				<Button>수정</Button>
+				<Button onClick={handleModal}>수정</Button>
+				{showModal && (
+					<Modal showModal={showModal} handleModal={handleModal}>
+						hey
+					</Modal>
+				)}
 			</Box>
 			<Box
 				type="rowFlex"

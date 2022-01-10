@@ -1,5 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
-import { rootState } from "../redux";
+import { useDispatch } from "react-redux";
 import { changeShopInfo } from "../redux/shop";
 
 export interface ShopDataType {

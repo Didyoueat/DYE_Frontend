@@ -1,10 +1,13 @@
 import React from "react";
+import useModal from "../../../hooks/useModal";
 import Box from "../../atoms/Box";
 import Button from "../../atoms/Button";
 import Text from "../../atoms/Text";
+import Modal from "../../molecules/Modal";
 import NoticeItem from "../../molecules/NoticeItem";
 
 const ShopNotice = () => {
+	const { showModal, handleModal } = useModal();
 	// 일단 더미데이터 사용, 추후 업데이트 요청 필요(상세 필드 뭐뭐 있는지)
 	const noticeArr = [
 		[
@@ -43,7 +46,12 @@ const ShopNotice = () => {
 		<Box type="colFlex" width="47.5%" height="100%" background="#ffffff">
 			<Box type="rowFlex" width="100%" height="10%">
 				<Text type="title">공지사항</Text>
-				<Button>+</Button>
+				<Button onClick={handleModal}>+</Button>
+				{showModal && (
+					<Modal showModal={showModal} handleModal={handleModal}>
+						hey
+					</Modal>
+				)}
 			</Box>
 			<Box width="85%" height="90%" overflow="auto">
 				{noticeArr.map((arr) => (

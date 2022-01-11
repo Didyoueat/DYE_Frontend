@@ -7,10 +7,11 @@ import Button from "../../atoms/Button";
 import Text from "../../atoms/Text";
 import LabelText from "../../molecules/LabelText";
 import Modal from "../../molecules/Modal";
+import ShopInfoForm from "../../molecules/ShopInfoForm";
 
 const ShopInfo = () => {
 	// 일단 더미데이터 사용
-	const { showModal, handleModal } = useModal();
+	const shop = useModal();
 	const shopInfo = useSelector((state: rootState) => state.shopReducer.info);
 	const infoArr = [
 		["매장 이름:", "businessName", shopInfo.businessName],
@@ -30,10 +31,14 @@ const ShopInfo = () => {
 		<Box type="colFlex" width="47.5%" height="100%" background="#ffffff">
 			<Box type="rowFlex" width="100%" height="10%">
 				<Text type="title">매장 정보</Text>
-				<Button onClick={handleModal}>수정</Button>
-				{showModal && (
-					<Modal showModal={showModal} handleModal={handleModal}>
-						hey
+				{/* todo: button과 modal 묶어 컴포넌트 하나로 만들기 */}
+				<Button onClick={shop.handleModal}>수정</Button>
+				{shop.showModal && (
+					<Modal
+						showModal={shop.showModal}
+						handleModal={shop.handleModal}
+					>
+						<ShopInfoForm />
 					</Modal>
 				)}
 			</Box>

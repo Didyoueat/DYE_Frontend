@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { changeShopInfo } from "../redux/shop";
 
 export interface ShopDataType {
+	// 대표 메뉴 따로 값 만들어야하나?
 	shopId: number;
 	businessNumber: string;
 	businessName: string;
@@ -51,6 +52,8 @@ const useShopData = (data: Record<string, any>) => {
 	const dispatch = useDispatch();
 
 	data.dayOff = getDayOff(data["dayOff"]);
+	data.businessPhone = data.businessPhone.toString().split("-");
+	data.phone = data.phone.toString().split("-");
 	dispatch(changeShopInfo(data));
 };
 

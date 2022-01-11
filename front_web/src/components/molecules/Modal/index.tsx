@@ -13,8 +13,17 @@ const Modal = ({ showModal, handleModal, children }: ModalProps) => {
 		<Box type="modal">
 			{showModal && (
 				<div>
-					<Button onClick={handleModal}> x </Button>
-					<div>{children}</div>
+					{children}
+					<Button onClick={handleModal}> 취소 </Button>
+					<Button
+						type="submit"
+						onClick={(e) => {
+							e.preventDefault();
+							console.log("submit"); // 임시로 써놓은 거,,
+						}}
+					>
+						수정
+					</Button>
 				</div>
 			)}
 		</Box>

@@ -6,14 +6,15 @@ import Text from "../../atoms/Text";
 export interface LabelTextProps {
 	label?: any;
 	id?: any;
+	onChange?: any;
 	children?: any;
 }
 
-const LabelText = ({ label, id, children }: LabelTextProps) => {
+const LabelText = ({ label, id, onChange, children }: LabelTextProps) => {
 	return (
-		<Box type="rowFlex" flexJustify="flex-start">
+		<Box type="rowFlex">
 			<Label htmlFor={id}>{label}</Label>
-			<Text id={id} type="bold">
+			<Text id={id} type="bold" onChange={onChange}>
 				&nbsp;{children}
 			</Text>
 		</Box>

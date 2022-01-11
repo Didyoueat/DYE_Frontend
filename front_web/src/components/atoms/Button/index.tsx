@@ -18,12 +18,17 @@ const StyledButton = styled.button<SButton>`
 `;
 
 export interface ButtonProps extends SButton {
+	type?: any;
 	onClick?: any;
 	children?: ReactChild;
 }
 
-const Button = ({ onClick, children }: ButtonProps) => {
-	return <StyledButton onClick={onClick}>{children}</StyledButton>;
+const Button = ({ type, onClick, children }: ButtonProps) => {
+	return (
+		<StyledButton type={type} onClick={onClick}>
+			{children}
+		</StyledButton>
+	);
 };
 
 export default Button;

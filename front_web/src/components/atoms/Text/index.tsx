@@ -33,6 +33,7 @@ const StyledText = styled.p<SText>`
 
 export interface TextProps extends SText {
 	id?: any;
+	onChange?: any;
 	children?: any;
 }
 

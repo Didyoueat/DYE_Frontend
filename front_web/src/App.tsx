@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Temp from "./components/pages/Temp";
 import Shop from "./components/pages/Shop";
+import Dishes from "./components/pages/Dishes";
 
 const GlobalStyle = createGlobalStyle`
 	html {
@@ -34,7 +35,7 @@ function App() {
 				<Route path="/orders" element={<Temp />} />
 				<Route path="/users" element={<Temp />} />
 				<Route path="/reviews" element={<Temp />} />
-				<Route path="/dishes" element={<Temp />} />
+				<Route path="/dishes" element={<Dishes />} />
 				<Route path="/shop" element={<Shop />} />
 			</Routes>
 		</BrowserRouter>

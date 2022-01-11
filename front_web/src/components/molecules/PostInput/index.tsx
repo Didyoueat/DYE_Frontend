@@ -19,7 +19,7 @@ const PostInput = ({ label, setValue, value }: PostInputProps) => {
 				type="text"
 				id="address"
 				value={value}
-				onChange={() => console.log("dont change")}
+				onChange={() => alert("주소는 임의로 변경하실 수 없습니다.")}
 				readonly="true"
 			/>
 			<Button

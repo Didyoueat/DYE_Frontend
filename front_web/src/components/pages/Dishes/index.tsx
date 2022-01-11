@@ -1,10 +1,9 @@
 import React from "react";
 import Box from "../../atoms/Box";
 import Base from "../../organisms/Base";
-import ShopInfo from "../../organisms/ShopInfo";
-import ShopNotice from "../../organisms/ShopNotice";
+import DishesInfo from "../../organisms/DishesInfo";
 
-const Shop = () => {
+const Dishes = () => {
 	return (
 		<Base>
 			<Box
@@ -14,11 +13,10 @@ const Shop = () => {
 				height="100%"
 				background="#e5e5e5"
 			>
-				<ShopInfo />
-				<ShopNotice />
+				<DishesInfo />
 			</Box>
 		</Base>
 	);
 };
 
-export default Shop;
+export default Dishes;

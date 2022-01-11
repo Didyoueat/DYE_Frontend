@@ -7,13 +7,14 @@ import Button from "../../atoms/Button";
 import Text from "../../atoms/Text";
 import LabelText from "../../molecules/LabelText";
 import Modal from "../../molecules/Modal";
-import ShopInfoForm from "../../molecules/ShopInfoForm";
+import ShopInfoForm from "../ShopInfoForm";
 
 const ShopInfo = () => {
 	// 일단 더미데이터 사용
 	const shop = useModal();
 	const shopInfo = useSelector((state: rootState) => state.shopReducer.info);
 	const infoArr = [
+		// todo: 이거 따로 타입지정해둘 필요 있는듯,, or redux state 자체에 선언
 		["매장 이름:", "businessName", shopInfo.businessName],
 		["매장 주소:", "address", shopInfo.address],
 		["배송 동네:", "deliveryArea", "무슨무슨동"],

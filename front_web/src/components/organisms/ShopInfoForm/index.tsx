@@ -3,10 +3,10 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import useInput from "../../../hooks/useInput";
 import { rootState } from "../../../redux";
-import LabelInput from "../LabelInput";
-import LabelText from "../LabelText";
+import LabelInput from "../../molecules/LabelInput";
+import LabelText from "../../molecules/LabelText";
 import useShopData from "../../../hooks/useShopData";
-import PostInput from "../PostInput";
+import PostInput from "../../molecules/PostInput";
 
 const ShopInfoForm = () => {
 	const [selectedFile, setSelectedFile] = useState<FileList | null>(null);
@@ -33,9 +33,7 @@ const ShopInfoForm = () => {
 	// 	if (selectedFile) {
 	// 		formData.append("image", selectedFile[0]);
 	// 		await axios
-	// 			.post("/v0/users/create", formData, {
-	// 				headers: { "Content-Type": "multipart/form-data" },
-	// 			})
+	// 			.post("/v0/users/create", formData, { headers: { "Content-Type": "multipart/form-data" }, })
 	// 			.then((res) => {
 	// 				console.log(res.data);
 	// 				imageUrl.setValue(res.data.location);

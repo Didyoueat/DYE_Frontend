@@ -4,8 +4,11 @@ import Box from "../../atoms/Box";
 import Button from "../../atoms/Button";
 import DropDown from "../../molecules/DropDown";
 import Modal from "../../molecules/Modal";
+import DishAddForm from "../DishAddForm";
 
-const DishesInfo = () => {
+const DishesInfo = (info: any) => {
+	const dishes = info.info.dishes;
+
 	const dishAdd = useModal();
 	const handleAddComplete = () => {
 		console.log("add submit");
@@ -30,7 +33,7 @@ const DishesInfo = () => {
 						cancelButton="취소"
 						submitButton="저장"
 					>
-						반찬 추가 모달창
+						<DishAddForm />
 					</Modal>
 				)}
 				<DropDown items={["카테고리?", "뭐가", "있지"]} />

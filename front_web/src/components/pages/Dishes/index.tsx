@@ -1,9 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { rootState } from "../../../redux";
 import Box from "../../atoms/Box";
 import Base from "../../organisms/Base";
 import DishesInfo from "../../organisms/DishesInfo";
 
 const Dishes = () => {
+	// 일단 더미데이터 사용
+	const shopInfo = useSelector((state: rootState) => state.shopReducer.info);
+
 	return (
 		<Base>
 			<Box
@@ -13,7 +18,7 @@ const Dishes = () => {
 				height="100%"
 				background="#e5e5e5"
 			>
-				<DishesInfo />
+				<DishesInfo info={shopInfo} />
 			</Box>
 		</Base>
 	);

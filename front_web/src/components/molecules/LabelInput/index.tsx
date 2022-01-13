@@ -12,6 +12,7 @@ export interface LabelInputProps {
 	value?: any;
 	onChange?: any;
 	readonly?: any;
+	checked?: any;
 	children?: any;
 }
 
@@ -24,6 +25,7 @@ const LabelInput = ({
 	value,
 	onChange,
 	readonly,
+	checked,
 	children,
 }: LabelInputProps) => {
 	return (
@@ -37,6 +39,7 @@ const LabelInput = ({
 				value={value}
 				onChange={onChange}
 				readonly={readonly}
+				checked={checked}
 			></Input>
 			{children}
 		</Box>

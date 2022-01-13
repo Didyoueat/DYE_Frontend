@@ -7,7 +7,12 @@ import Modal from "../../molecules/Modal";
 import NoticeItem from "../../molecules/NoticeItem";
 
 const ShopNotice = () => {
-	const { showModal, handleModal } = useModal();
+	const notice = useModal();
+	const handleNoticeComplete = () => {
+		console.log("notice submit");
+		// 추후 추가
+	};
+
 	// 일단 더미데이터 사용, 추후 업데이트 요청 필요(상세 필드 뭐뭐 있는지)
 	const noticeArr = [
 		[
@@ -46,10 +51,16 @@ const ShopNotice = () => {
 		<Box type="colFlex" width="47.5%" height="100%" background="#ffffff">
 			<Box type="rowFlex" width="100%" height="10%">
 				<Text type="title">공지사항</Text>
-				<Button onClick={handleModal}>+</Button>
-				{showModal && (
-					<Modal showModal={showModal} handleModal={handleModal}>
-						hey
+				<Button onClick={notice.handleModal}>+</Button>
+				{notice.showModal && (
+					<Modal
+						showModal={notice.showModal}
+						handleModal={notice.handleModal}
+						handleComplete={handleNoticeComplete}
+						cancelButton="취소"
+						submitButton="저장"
+					>
+						공지사항
 					</Modal>
 				)}
 			</Box>

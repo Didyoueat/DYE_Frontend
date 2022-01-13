@@ -45,6 +45,7 @@ const StyledSelect = styled.select<SSelect>`
 `;
 
 export interface SelectProps extends SSelect {
+	defaultValue?: any;
 	onChange?: any;
 	children?: any;
 }

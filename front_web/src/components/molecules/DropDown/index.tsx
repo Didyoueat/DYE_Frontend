@@ -28,12 +28,13 @@ const StyledDropDown = styled.div<SDropDown>`
 export interface DropDownProps extends SDropDown {
 	items: Array<string>;
 	onChange?: any;
+	selected?: any;
 }
 
-const DropDown = ({ items, onChange, ...props }: DropDownProps) => {
+const DropDown = ({ items, onChange, selected, ...props }: DropDownProps) => {
 	return (
 		<StyledDropDown {...props}>
-			<Select onChange={onChange}>
+			<Select defaultValue={selected} onChange={onChange}>
 				{items.map((item) => {
 					return (
 						<Option key={item} value={item}>

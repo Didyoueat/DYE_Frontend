@@ -4,10 +4,9 @@ import useInput from "../../../hooks/useInput";
 import LabelInput from "../../molecules/LabelInput";
 import LabelText from "../../molecules/LabelText";
 import PostInput from "../../molecules/PostInput";
-import Box from "../../atoms/Box";
-import Label from "../../atoms/Label";
-import DropDown from "../../molecules/DropDown";
-import Input from "../../atoms/Input";
+import OfficeHour from "../../molecules/OfficeHour";
+import DayOff from "../../molecules/DayOff";
+import PhoneInput from "../../molecules/PhoneInput";
 
 export interface ShopInfoFormProps {
 	info: any;
@@ -15,23 +14,23 @@ export interface ShopInfoFormProps {
 
 const ShopInfoForm = ({ info }: ShopInfoFormProps) => {
 	const [selectedFile, setSelectedFile] = useState<FileList | null>(null);
-	const phoneFront = ["02", "010", "011"];
-
-	const businessName = useInput(info[0][2]);
-	const imageUrl = useInput(info[1][2]);
-	const address = useInput(info[2][2]);
-	const officeHour = useInput(info[3][2]);
-	const dayOff = useInput(info[4][2]);
-	const businessPhone = useInput(info[5][2]);
-	const content = useInput(info[6][2]);
-	const origin = useInput(info[7][2]);
-	const name = useInput(info[8][2]);
-	const businessNumber = useInput(info[9][2]);
-	const phone = useInput(info[10][2]);
+	const [
+		businessName,
+		imageUrl,
+		address,
+		officeHour,
+		dayOff,
+		businessPhone,
+		content,
+		origin,
+		name,
+		businessNumber,
+		phone,
+	] = info.map((item) => useInput(item.data));
 
 	// todo: api 연동하는 부분 추후 수정
 	// 파일 데이터 formData에 담아 넘긴 후, 응답으로 imageUrl을 받아 dispatch해야 하나?
-	// 응답 받으면 모든 상태 dispatch해야 하는데 아직 redux 상태 정리가 안돼서 todo
+	// todo: 응답 받으면 모든 상태 dispatch해야 하는데 아직 redux 상태 정리가 안돼있음
 	// const handleUpload = async () => {
 	// 	const formData = new FormData();
 	// 	if (selectedFile) {
@@ -46,7 +45,9 @@ const ShopInfoForm = ({ info }: ShopInfoFormProps) => {
 	// };
 
 	return (
-		<form>
+		<form onChange={(e) => console.log(e.target)}>
+			{/* todo: form 제출 시 사용할 메소드 작성해야 함 */}
+
 			<LabelInput
 				label="매장 이름"
 				type="text"
@@ -67,25 +68,19 @@ const ShopInfoForm = ({ info }: ShopInfoFormProps) => {
 				setValue={address.setValue}
 				value={address.value}
 			/>
+			<OfficeHour
+				value={officeHour.value}
+				setValue={officeHour.setValue}
+			/>
+			<DayOff value={dayOff.value} setValue={dayOff.setValue} />
+			<PhoneInput
+				label="매장 연락처"
+				id="businessPhone"
+				value={businessPhone.value}
+				setValue={businessPhone.setValue}
+			/>
 
-			{/* 최적화 해야 할 부분 */}
-			<Box type="rowFlex">
-				<Label htmlFor="officeHour">운영 시간</Label>
-				<DropDown items={["09:00", "10:00", "11:00"]} />~
-				<DropDown items={["18:00", "19:00", "20:00"]} />
-			</Box>
-			{/* 영업 요일 처리하는 훅이나 컴포넌트 따로 만들기*/}
-			<Box type="rowFlex">
-				<Label htmlFor="dayOff">휴무일</Label>
-			</Box>
-			<Box type="rowFlex">
-				<Label htmlFor="businessPhone">매장 연락처</Label>
-				<DropDown items={["02", "010", "011"]} />-
-				<Input type="text" />-
-				<Input type="text" />
-			</Box>
 			{/* 반찬 list 불러와서 드롭다운 생성 */}
-			{/* 최적화 해야 할 부분 */}
 
 			<LabelInput
 				label="매장 소개글"
@@ -111,12 +106,12 @@ const ShopInfoForm = ({ info }: ShopInfoFormProps) => {
 			>
 				{businessNumber.value}
 			</LabelText>
-			<Box type="rowFlex">
-				<Label htmlFor="phone">사장님 연락처</Label>
-				<DropDown items={["02", "010", "011"]} />-
-				<Input type="text" />-
-				<Input type="text" />
-			</Box>
+			<PhoneInput
+				label="사장님 연락처"
+				id="phone"
+				value={phone.value}
+				setValue={phone.setValue}
+			/>
 		</form>
 	);
 };

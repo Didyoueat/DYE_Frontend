@@ -36,9 +36,17 @@ export interface InputProps extends SInput {
 	onChange?: any;
 	value?: any;
 	readonly?: any;
+	checked?: any;
 }
 
-const Input = ({ type, id, onChange, value, readonly }: InputProps) => {
+const Input = ({
+	type,
+	id,
+	onChange,
+	value,
+	readonly,
+	checked,
+}: InputProps) => {
 	return (
 		<StyledInput
 			type={type}
@@ -46,6 +54,7 @@ const Input = ({ type, id, onChange, value, readonly }: InputProps) => {
 			onChange={onChange}
 			value={value}
 			{...(readonly && "readonly")}
+			checked={checked && "checked"}
 		/>
 	);
 };

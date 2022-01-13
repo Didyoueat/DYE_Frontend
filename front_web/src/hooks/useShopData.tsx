@@ -54,6 +54,7 @@ const useShopData = (data: Record<string, any>) => {
 	data.dayOff = getDayOff(data["dayOff"]);
 	data.businessPhone = data.businessPhone.toString().split("-");
 	data.phone = data.phone.toString().split("-");
+	data.officeHour = data.officeHour.toString().split("-");
 	dispatch(changeShopInfo(data));
 };
 

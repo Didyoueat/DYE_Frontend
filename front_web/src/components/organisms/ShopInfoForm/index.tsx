@@ -47,7 +47,6 @@ const ShopInfoForm = ({ info }: ShopInfoFormProps) => {
 	return (
 		<form onChange={(e) => console.log(e.target)}>
 			{/* todo: form 제출 시 사용할 메소드 작성해야 함 */}
-
 			<LabelInput
 				label="매장 이름"
 				type="text"
@@ -79,9 +78,7 @@ const ShopInfoForm = ({ info }: ShopInfoFormProps) => {
 				value={businessPhone.value}
 				setValue={businessPhone.setValue}
 			/>
-
 			{/* 반찬 list 불러와서 드롭다운 생성 */}
-
 			<LabelInput
 				label="매장 소개글"
 				type="text"

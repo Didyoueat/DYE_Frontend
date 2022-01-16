@@ -10,22 +10,23 @@ export interface OfficeHourProps {
 
 const OfficeHour = ({ value, setValue }: OfficeHourProps) => {
 	return (
-		<Box type="rowFlex">
-			<Label htmlFor="officeHour">운영 시간</Label>
-			<Input
-				type="time"
-				id="officeHour"
-				onChange={(e) => setValue([e.target.value, value[1]])}
-				value={value[0]}
-			/>
-			~
-			<Input
-				type="time"
-				id="officeHour"
-				onChange={(e) => setValue([value[0], e.target.value])}
-				value={value[1]}
-			/>
-		</Box>
+		// <Box type="rowFlex">
+		// 	<Label htmlFor="officeHour">운영 시간</Label>
+		// 	<Input
+		// 		type="time"
+		// 		id="officeHour"
+		// 		onChange={(e) => setValue([e.target.value, value[1]])}
+		// 		value={value[0]}
+		// 	/>
+		// 	~
+		// 	<Input
+		// 		type="time"
+		// 		id="officeHour"
+		// 		onChange={(e) => setValue([value[0], e.target.value])}
+		// 		value={value[1]}
+		// 	/>
+		// </Box>
+		<div></div>
 	);
 };
 

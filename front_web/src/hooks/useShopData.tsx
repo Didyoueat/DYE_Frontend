@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { changeShopInfo } from "../redux/shop";
 
 export interface ShopDataType {
-	// 대표 메뉴 따로 값 만들어야하나?
+	// 모듈로 따로 빼서 쓰는게 좋을듯
 	shopId: number;
 	businessNumber: string;
 	businessName: string;

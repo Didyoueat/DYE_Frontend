@@ -1,19 +1,19 @@
 import React from "react";
-import Box from "../../atoms/Box";
-import SideNavItem from "../../molecules/SideNavItem";
+import Box from "@atoms/Box";
+import SideNavItem from "@molecules/SideNavItem";
 
-import schedule_s from "../../assets/calendar_selected.png";
-import schedule_u from "../../assets/calendar_unselected.png";
-import orders_s from "../../assets/clipboard_selected.png";
-import orders_u from "../../assets/clipboard_unselected.png";
-import users_s from "../../assets/user_selected.png";
-import users_u from "../../assets/user_unselected.png";
-import reviews_s from "../../assets/star_selected.png";
-import reviews_u from "../../assets/star_unselected.png";
-import dishes_s from "../../assets/rice_selected.png";
-import dishes_u from "../../assets/rice_unselected.png";
-import shop_s from "../../assets/shop_selected.png";
-import shop_u from "../../assets/shop_unselected.png";
+import schedule_s from "@assets/calendar_selected.png";
+import schedule_u from "@assets/calendar_unselected.png";
+import orders_s from "@assets/clipboard_selected.png";
+import orders_u from "@assets/clipboard_unselected.png";
+import users_s from "@assets/user_selected.png";
+import users_u from "@assets/user_unselected.png";
+import reviews_s from "@assets/star_selected.png";
+import reviews_u from "@assets/star_unselected.png";
+import dishes_s from "@assets/rice_selected.png";
+import dishes_u from "@assets/rice_unselected.png";
+import shop_s from "@assets/shop_selected.png";
+import shop_u from "@assets/shop_unselected.png";
 
 const SideNav = () => {
 	const location = window.location.pathname.split("/")[1];

@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../../atoms/Card";
-import Text from "../../atoms/Text";
+import Card from "@atoms/Card";
+import Text from "@atoms/Text";
 
 export interface NoticeItemProps {
 	date?: any;

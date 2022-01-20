@@ -1,6 +1,6 @@
 import React, { ReactChild, ReactChildren } from "react";
-import Box from "../../atoms/Box";
-import Button from "../../atoms/Button";
+import Box from "@atoms/Box";
+import Button from "@atoms/Button";
 
 interface ModalProps {
 	showModal?: boolean;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import Box from "../../atoms/Box";
+import Box from "@atoms/Box";
 
 interface SSideNavItem {
 	width?: string;

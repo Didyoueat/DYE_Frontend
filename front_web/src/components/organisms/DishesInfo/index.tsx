@@ -1,10 +1,10 @@
 import React from "react";
-import useModal from "../../../hooks/useModal";
-import Box from "../../atoms/Box";
-import Button from "../../atoms/Button";
-import DropDown from "../../molecules/DropDown";
-import Modal from "../../molecules/Modal";
-import DishAddForm from "../DishAddForm";
+import useModal from "@hooks/useModal";
+import Box from "@atoms/Box";
+import Button from "@atoms/Button";
+import DropDown from "@molecules/DropDown";
+import Modal from "@molecules/Modal";
+import DishAddForm from "@organisms/DishAddForm";
 
 const DishesInfo = (info: any) => {
 	const dishes = info.info.dishes;

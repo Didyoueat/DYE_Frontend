@@ -1,7 +1,7 @@
 import React from "react";
-import Box from "../../atoms/Box";
-import Label from "../../atoms/Label";
-import LabelInput from "../LabelInput";
+import Box from "@atoms/Box";
+import Label from "@atoms/Label";
+import LabelInput from "@molecules/LabelInput";
 
 export interface DayOffProps {
 	value?: any;

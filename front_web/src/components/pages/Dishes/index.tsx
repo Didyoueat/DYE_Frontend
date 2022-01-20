@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { rootState } from "../../../redux";
-import Box from "../../atoms/Box";
-import Base from "../../organisms/Base";
-import DishesInfo from "../../organisms/DishesInfo";
+import { rootState } from "@redux/index";
+import Box from "@atoms/Box";
+import Base from "@organisms/Base";
+import DishesInfo from "@organisms/DishesInfo";
 
 const Dishes = () => {
 	// 일단 더미데이터 사용

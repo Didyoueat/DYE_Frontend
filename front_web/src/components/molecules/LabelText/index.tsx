@@ -1,7 +1,7 @@
 import React from "react";
-import Box from "../../atoms/Box";
-import Label from "../../atoms/Label";
-import Text from "../../atoms/Text";
+import Box from "@atoms/Box";
+import Label from "@atoms/Label";
+import Text from "@atoms/Text";
 
 export interface LabelTextProps {
 	label?: any;

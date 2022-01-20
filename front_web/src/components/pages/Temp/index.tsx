@@ -1,8 +1,8 @@
 import React from "react";
-import DropDown from "../../molecules/DropDown";
-import Text from "../../atoms/Text";
-import Base from "../../organisms/Base";
-import OfficeHour from "../../molecules/OfficeHour";
+import DropDown from "@molecules/DropDown";
+import Text from "@atoms/Text";
+import Base from "@organisms/Base";
+import OfficeHour from "@molecules/OfficeHour";
 
 const Temp = () => {
 	return (

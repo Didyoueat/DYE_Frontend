@@ -1,11 +1,11 @@
 import React from "react";
-import useModal from "../../../hooks/useModal";
-import Box from "../../atoms/Box";
-import Button from "../../atoms/Button";
-import Text from "../../atoms/Text";
-import LabelText from "../../molecules/LabelText";
-import Modal from "../../molecules/Modal";
-import ShopInfoForm from "../ShopInfoForm";
+import useModal from "@hooks/useModal";
+import Box from "@atoms/Box";
+import Button from "@atoms/Button";
+import Text from "@atoms/Text";
+import LabelText from "@molecules/LabelText";
+import Modal from "@molecules/Modal";
+import ShopInfoForm from "@organisms/ShopInfoForm";
 
 const ShopInfo = (info: any) => {
 	const shopInfo = info.info;

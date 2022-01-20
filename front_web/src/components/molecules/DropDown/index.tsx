@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import Option from "../../atoms/Option";
-import Select from "../../atoms/Select";
+import Option from "@atoms/Option";
+import Select from "@atoms/Select";
 
 interface SDropDown {
 	width?: any;

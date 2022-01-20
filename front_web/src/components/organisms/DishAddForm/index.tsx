@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import useInput from "../../../hooks/useInput";
-import Box from "../../atoms/Box";
-import Text from "../../atoms/Text";
-import LabelInput from "../../molecules/LabelInput";
+import useInput from "@hooks/useInput";
+import Box from "@atoms/Box";
+import Text from "@atoms/Text";
+import LabelInput from "@molecules/LabelInput";
 
 const DishAddForm = () => {
 	const [selectedFile, setSelectedFile] = useState<FileList | null>(null);

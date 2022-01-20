@@ -1,10 +1,10 @@
 import React from "react";
-import useModal from "../../../hooks/useModal";
-import Box from "../../atoms/Box";
-import Button from "../../atoms/Button";
-import Text from "../../atoms/Text";
-import Modal from "../../molecules/Modal";
-import NoticeItem from "../../molecules/NoticeItem";
+import useModal from "@hooks/useModal";
+import Box from "@atoms/Box";
+import Button from "@atoms/Button";
+import Text from "@atoms/Text";
+import Modal from "@molecules/Modal";
+import NoticeItem from "@molecules/NoticeItem";
 
 const ShopNotice = () => {
 	const notice = useModal();

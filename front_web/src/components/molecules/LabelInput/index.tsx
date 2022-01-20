@@ -1,7 +1,7 @@
 import React from "react";
-import Box from "../../atoms/Box";
-import Input from "../../atoms/Input";
-import Label from "../../atoms/Label";
+import Box from "@atoms/Box";
+import Input from "@atoms/Input";
+import Label from "@atoms/Label";
 
 export interface LabelInputProps {
 	width?: any;

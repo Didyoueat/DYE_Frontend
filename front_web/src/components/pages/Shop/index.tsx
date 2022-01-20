@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import useShopData from "../../../hooks/useShopData";
-import { rootState } from "../../../redux";
-import Box from "../../atoms/Box";
-import Base from "../../organisms/Base";
-import ShopInfo from "../../organisms/ShopInfo";
-import ShopNotice from "../../organisms/ShopNotice";
+import useShopData from "@hooks/useShopData";
+import { rootState } from "@redux/index";
+import Box from "@atoms/Box";
+import Base from "@organisms/Base";
+import ShopInfo from "@organisms/ShopInfo";
+import ShopNotice from "@organisms/ShopNotice";
 
 const Shop = () => {
 	// 일단 더미데이터 사용

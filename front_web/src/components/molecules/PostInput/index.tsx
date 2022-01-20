@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Box from "../../atoms/Box";
-import Button from "../../atoms/Button";
-import DaumPost from "../../atoms/DaumPost";
-import LabelInput from "../LabelInput";
+import Box from "@atoms/Box";
+import Button from "@atoms/Button";
+import DaumPost from "@atoms/DaumPost";
+import LabelInput from "@molecules/LabelInput";
 
 export interface PostInputProps {
 	label?: any;

@@ -1,6 +1,6 @@
 import React from "react";
-import Box from "../../atoms/Box";
-import TopNavItem from "../../atoms/TopNavItem";
+import Box from "@atoms/Box";
+import TopNavItem from "@atoms/TopNavItem";
 
 // export interface TopNavProps {
 // }

@@ -1,9 +1,9 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Temp from "./components/pages/Temp";
-import Shop from "./components/pages/Shop";
-import Dishes from "./components/pages/Dishes";
+import Temp from "@pages/Temp";
+import Shop from "@pages/Shop";
+import Dishes from "@pages/Dishes";
 
 const GlobalStyle = createGlobalStyle`
 	html {

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import useInput from "../../../hooks/useInput";
-import LabelInput from "../../molecules/LabelInput";
-import LabelText from "../../molecules/LabelText";
-import PostInput from "../../molecules/PostInput";
-import OfficeHour from "../../molecules/OfficeHour";
-import DayOff from "../../molecules/DayOff";
-import PhoneInput from "../../molecules/PhoneInput";
+import useInput from "@hooks/useInput";
+import LabelInput from "@molecules/LabelInput";
+import LabelText from "@molecules/LabelText";
+import PostInput from "@molecules/PostInput";
+import OfficeHour from "@molecules/OfficeHour";
+import DayOff from "@molecules/DayOff";
+import PhoneInput from "@molecules/PhoneInput";
 
 export interface ShopInfoFormProps {
 	info: any;

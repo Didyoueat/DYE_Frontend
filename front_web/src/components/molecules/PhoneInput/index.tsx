@@ -1,8 +1,8 @@
 import React from "react";
-import Box from "../../atoms/Box";
-import Input from "../../atoms/Input";
-import Label from "../../atoms/Label";
-import DropDown from "../DropDown";
+import Box from "@atoms/Box";
+import Input from "@atoms/Input";
+import Label from "@atoms/Label";
+import DropDown from "@molecules/DropDown";
 
 export interface PhoneInputProps {
 	label?: any;

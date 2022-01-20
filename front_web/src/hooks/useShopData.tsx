@@ -1,42 +1,6 @@
 import { useDispatch } from "react-redux";
 import { changeShopInfo } from "../redux/shop";
 
-export interface ShopDataType {
-	// 모듈로 따로 빼서 쓰는게 좋을듯
-	shopId: number;
-	businessNumber: string;
-	businessName: string;
-	businessPhone: string;
-	dayOff: boolean[];
-	address: string;
-	latitude: number;
-	longitude: number;
-	name: string;
-	phone: string;
-	origin: string;
-	content: string;
-	imageUrl: string;
-	officeHour: string; // "09:00-18:00"
-	temporaryDayStart: Date; // type: Date, allow null
-	temporaryDayEnd: Date; // type: Date, allow null
-	createdAt: Date;
-	updatedAt: Date;
-	dishes: {
-		dishId: number;
-		shopId: number;
-		main: boolean;
-		thumbnail: boolean;
-		title: string;
-		content: string;
-		price: number;
-		count: number;
-		weight: number;
-		imageUrl: string;
-		createdAt: Date;
-		updatedAt: Date;
-	}[];
-}
-
 const getDayOff = (dayOff: number) => {
 	const ret = [false, false, false, false, false, false, false];
 	for (let i = 6; i >= 0 && dayOff >= 0; i--) {

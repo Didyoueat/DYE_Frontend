@@ -8,6 +8,7 @@
 			"@organisms/*": ["src/components/organisms/*"],
 			"@pages/*": ["src/components/pages/*"],
 			"@hooks/*": ["src/hooks/*"],
+			"@interfaces/*": ["src/interfaces/*"],
 			"@redux/*": ["src/redux/*"]
 		}
 	}

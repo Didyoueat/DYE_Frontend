@@ -15,18 +15,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "react-jsx",
-		// "baseUrl": "./",
-		// "paths": {
-		// 	"@/*": ["src/*"],
-		// 	"@assets/*": ["src/components/assets/*"],
-		// 	"@atoms/*": ["src/components/atoms/*"],
-		// 	"@molecules/*": ["src/components/molecules/*"],
-		// 	"@organisms/*": ["src/components/organisms/*"],
-		// 	"@pages/*": ["src/components/pages/*"],
-		// 	"@hooks/*": ["src/hooks/*"],
-		// 	"@redux/*": ["src/redux/*"],
-		// },
+		"jsx": "react-jsx"
 	},
 	"include": [
 		"src",
@@ -35,5 +24,5 @@
 	"exclude": [
 		"node_modules",
 		"**/node_modules/*"
-	  ]
+	]
 }

@@ -1,15 +1,7 @@
-import React, { ReactChild, ReactChildren } from "react";
+import React from "react";
 import Box from "@atoms/Box";
 import Button from "@atoms/Button";
-
-interface ModalProps {
-	showModal?: boolean;
-	handleModal?: () => void;
-	handleComplete?: any;
-	cancelButton?: any;
-	submitButton?: any;
-	children?: ReactChild | ReactChildren;
-}
+import { ModalProps } from "@interfaces/modal.interface";
 
 const Modal = ({
 	showModal,

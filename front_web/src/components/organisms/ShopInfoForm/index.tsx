@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { ModalProps } from "@interfaces/modal.interface";
 import useInput from "@hooks/useInput";
+import PhoneInput from "@molecules/PhoneInput";
 import LabelInput from "@molecules/LabelInput";
 import LabelText from "@molecules/LabelText";
 import PostInput from "@molecules/PostInput";
 import OfficeHour from "@molecules/OfficeHour";
 import DayOff from "@molecules/DayOff";
-import PhoneInput from "@molecules/PhoneInput";
+import Modal from "@molecules/Modal";
 
-export interface ShopInfoFormProps {
+export interface ShopInfoFormProps extends ModalProps {
 	info: any;
 }
 
-const ShopInfoForm = ({ info }: ShopInfoFormProps) => {
+const ShopInfoForm = ({ info, ...props }: ShopInfoFormProps) => {
 	const [selectedFile, setSelectedFile] = useState<FileList | null>(null);
 	const [
 		businessName,
@@ -45,71 +47,77 @@ const ShopInfoForm = ({ info }: ShopInfoFormProps) => {
 	// };
 
 	return (
-		<form onChange={(e) => console.log(e.target)}>
-			{/* todo: form 제출 시 사용할 메소드 작성해야 함 */}
-			<LabelInput
-				label="매장 이름"
-				type="text"
-				id="businessName"
-				onChange={businessName.onChange}
-				value={businessName.value}
-			/>
-			<LabelInput
-				label="대표 사진"
-				type="file"
-				id="imageUrl"
-				onChange={(e) => {
-					if (e.target.files) setSelectedFile(e.target.files);
-				}}
-			/>
-			<PostInput
-				label="매장 주소"
-				setValue={address.setValue}
-				value={address.value}
-			/>
-			<OfficeHour
-				value={officeHour.value}
-				setValue={officeHour.setValue}
-			/>
-			<DayOff value={dayOff.value} setValue={dayOff.setValue} />
-			<PhoneInput
-				label="매장 연락처"
-				id="businessPhone"
-				value={businessPhone.value}
-				setValue={businessPhone.setValue}
-			/>
-			{/* 반찬 list 불러와서 드롭다운 생성 */}
-			<LabelInput
-				label="매장 소개글"
-				type="text"
-				id="content"
-				onChange={content.onChange}
-				value={content.value}
-			/>
-			<LabelInput
-				label="원산지 정보"
-				type="text"
-				id="origin"
-				onChange={origin.onChange}
-				value={origin.value}
-			/>
-			<LabelText label="사장님 성함" id="name" onChange={name.onChange}>
-				{name.value}
-			</LabelText>
-			<LabelText
-				label="사업자등록번호"
-				id="businessNumber"
-				onChange={businessNumber.onChange}
-			>
-				{businessNumber.value}
-			</LabelText>
-			<PhoneInput
-				label="사장님 연락처"
-				id="phone"
-				value={phone.value}
-				setValue={phone.setValue}
-			/>
-		</form>
+		<Modal {...props}>
+			<form onChange={(e) => console.log(e.target)}>
+				{/* todo: form 제출 시 사용할 메소드 작성해야 함 */}
+				<LabelInput
+					label="매장 이름"
+					type="text"
+					id="businessName"
+					onChange={businessName.onChange}
+					value={businessName.value}
+				/>
+				<LabelInput
+					label="대표 사진"
+					type="file"
+					id="imageUrl"
+					onChange={(e) => {
+						if (e.target.files) setSelectedFile(e.target.files);
+					}}
+				/>
+				<PostInput
+					label="매장 주소"
+					setValue={address.setValue}
+					value={address.value}
+				/>
+				<OfficeHour
+					value={officeHour.value}
+					setValue={officeHour.setValue}
+				/>
+				<DayOff value={dayOff.value} setValue={dayOff.setValue} />
+				<PhoneInput
+					label="매장 연락처"
+					id="businessPhone"
+					value={businessPhone.value}
+					setValue={businessPhone.setValue}
+				/>
+				{/* 반찬 list 불러와서 드롭다운 생성 */}
+				<LabelInput
+					label="매장 소개글"
+					type="text"
+					id="content"
+					onChange={content.onChange}
+					value={content.value}
+				/>
+				<LabelInput
+					label="원산지 정보"
+					type="text"
+					id="origin"
+					onChange={origin.onChange}
+					value={origin.value}
+				/>
+				<LabelText
+					label="사장님 성함"
+					id="name"
+					onChange={name.onChange}
+				>
+					{name.value}
+				</LabelText>
+				<LabelText
+					label="사업자등록번호"
+					id="businessNumber"
+					onChange={businessNumber.onChange}
+				>
+					{businessNumber.value}
+				</LabelText>
+				<PhoneInput
+					label="사장님 연락처"
+					id="phone"
+					value={phone.value}
+					setValue={phone.setValue}
+				/>
+			</form>
+		</Modal>
 	);
 };
 

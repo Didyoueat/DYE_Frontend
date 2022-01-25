@@ -4,7 +4,6 @@ import Box from "@atoms/Box";
 import Button from "@atoms/Button";
 import Text from "@atoms/Text";
 import LabelText from "@molecules/LabelText";
-import Modal from "@molecules/Modal";
 import ShopInfoForm from "@organisms/ShopInfoForm";
 
 const ShopInfo = (info: any) => {
@@ -49,17 +48,14 @@ const ShopInfo = (info: any) => {
 				<Text type="title">매장 정보</Text>
 				<Button onClick={shop.handleModal}>수정</Button>
 				{shop.showModal && (
-					<Modal
+					<ShopInfoForm
 						showModal={shop.showModal}
 						handleModal={shop.handleModal}
 						handleComplete={handleInfoComplete}
 						cancelButton="취소"
 						submitButton="저장"
-					>
-						<ShopInfoForm info={infoArr} />
-					</Modal>
-					// Modal을 이렇게 직접적으로 가져다 쓰기 vs 모달을 사용하는 컴포넌트를 만들어서 가져다 쓰기
-					// 개인적으로는 상태 관리와 Props 내려주는 걸 상위에서 하는 게 맞는 것 같아서 이렇게 씀
+						info={infoArr}
+					/>
 				)}
 			</Box>
 			<Box

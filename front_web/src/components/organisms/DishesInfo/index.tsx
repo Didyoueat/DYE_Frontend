@@ -6,9 +6,7 @@ import DropDown from "@molecules/DropDown";
 import Modal from "@molecules/Modal";
 import DishAddForm from "@organisms/DishAddForm";
 
-const DishesInfo = (info: any) => {
-	const dishes = info.info.dishes;
-
+const DishesInfo = (info) => {
 	const dishAdd = useModal();
 	const handleAddComplete = () => {
 		console.log("add submit");
@@ -26,15 +24,13 @@ const DishesInfo = (info: any) => {
 			<Box type="rowFlex">
 				<Button onClick={dishAdd.handleModal}>반찬 추가하기</Button>
 				{dishAdd.showModal && (
-					<Modal
+					<DishAddForm
 						showModal={dishAdd.showModal}
 						handleModal={dishAdd.handleModal}
 						handleComplete={handleAddComplete}
 						cancelButton="취소"
 						submitButton="저장"
-					>
-						<DishAddForm />
-					</Modal>
+					/>
 				)}
 				<DropDown items={["카테고리?", "뭐가", "있지"]} />
 			</Box>

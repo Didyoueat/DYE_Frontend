@@ -6,6 +6,8 @@ import Text from "@atoms/Text";
 import Modal from "@molecules/Modal";
 import NoticeItem from "@molecules/NoticeItem";
 
+// 추후 수정 필요
+
 const ShopNotice = () => {
 	const notice = useModal();
 	const handleNoticeComplete = () => {

@@ -30,9 +30,7 @@ const ShopInfoForm = ({ info, ...props }: ShopInfoFormProps) => {
 		phone,
 	] = info.map((item) => useInput(item.data));
 
-	// todo: api 연동하는 부분 추후 수정
-	// 파일 데이터 formData에 담아 넘긴 후, 응답으로 imageUrl을 받아 dispatch해야 하나?
-	// todo: 응답 받으면 모든 상태 dispatch해야 하는데 아직 redux 상태 정리가 안돼있음
+	// todo: api 연동하는 부분은 hooks에 따로 빼놓기
 	// const handleUpload = async () => {
 	// 	const formData = new FormData();
 	// 	if (selectedFile) {

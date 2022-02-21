@@ -15,6 +15,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
+		// "downlevelIteration": true, // 테스트시에만 사용할 옵션
 		"jsx": "react-jsx"
 	},
 	"include": [

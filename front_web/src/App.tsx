@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Temp from "@pages/Temp";
 import Shop from "@pages/Shop";
 import Dishes from "@pages/Dishes";
+import Users from "@pages/Users";
 
 const GlobalStyle = createGlobalStyle`
 	html {
@@ -33,7 +34,7 @@ function App() {
 				<Route path="/" element={<Temp />} />
 				<Route path="/schedule" element={<Temp />} />
 				<Route path="/orders" element={<Temp />} />
-				<Route path="/users" element={<Temp />} />
+				<Route path="/users" element={<Users />} />
 				<Route path="/reviews" element={<Temp />} />
 				<Route path="/dishes" element={<Dishes />} />
 				<Route path="/shop" element={<Shop />} />

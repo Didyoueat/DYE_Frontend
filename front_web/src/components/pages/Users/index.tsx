@@ -2,6 +2,9 @@ import React from "react";
 import Base from "@organisms/Base";
 import Box from "@atoms/Box";
 import Table from "@molecules/Table";
+import Text from "@atoms/Text";
+import DropDown from "@molecules/DropDown";
+import Input from "@atoms/Input";
 
 const Users = () => {
 	// 일단 더미데이터 사용
@@ -83,15 +86,60 @@ const Users = () => {
 				width="80%"
 				height="100%"
 				background="#ffffff"
-			></Box>
-			<Box
-				type="rowFlex"
-				padding="0 0.5em"
-				width="80%"
-				height="100%"
-				background="#ffffff"
 			>
-				<Table columnsTemp={columnData} dataTemp={imshidata} />
+				<Box
+					type="colFlex"
+					padding="0.1em"
+					width="100%"
+					border="1px solid #333333"
+				>
+					<Box type="rowFlex" width="100%">
+						<Text type="bold">구독 상태: </Text>
+						<Box border="1px solid #333333">전체 고객</Box>
+						<Box border="1px solid #333333">구독 중</Box>
+						<Box border="1px solid #333333">신규 구독</Box>
+						<Box border="1px solid #333333">미구독</Box>
+					</Box>
+					<Box type="rowFlex" width="100%">
+						<Text type="bold">고객 등급: </Text>
+					</Box>
+					<Box type="rowFlex" width="100%">
+						<Text type="bold">주문 유형: </Text>
+					</Box>
+				</Box>
+				<Box type="colFlex" width="100%">
+					<Box type="rowFlex" width="100%">
+						<Text type="bold">
+							총 고객 수: 000 검색된 고객 수: 000
+						</Text>
+						<Box type="rowFlex">
+							<DropDown
+								items={[
+									"모두",
+									"고객 번호",
+									"고객명",
+									"고객 연락처",
+								]}
+								onChange={(e) => {
+									console.log(e.target.value);
+								}}
+								selected={0}
+							/>
+							<Input
+								type="text"
+								id="userSearch"
+								onChange={(e) => {
+									console.log(e.target.value);
+								}}
+							/>
+						</Box>
+					</Box>
+					<Table
+						width="100%"
+						columnsTemp={columnData}
+						dataTemp={imshidata}
+					/>
+				</Box>
 			</Box>
 		</Base>
 	);

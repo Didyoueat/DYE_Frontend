@@ -5,8 +5,8 @@ import { useTable } from "react-table";
 import styled, { css } from "styled-components";
 
 interface STable {
+	width?: string;
 	color?: string;
-	// 나중에 style 요소 추가
 }
 
 const TableStyles = css<STable>`
@@ -24,10 +24,9 @@ const StyledTable = styled.table<STable>`
 export interface TableProps extends STable {
 	columnsTemp?: any;
 	dataTemp?: any;
-	children?: any;
 }
 
-const Table = ({ columnsTemp, dataTemp, children, ...props }: TableProps) => {
+const Table = ({ columnsTemp, dataTemp, ...props }: TableProps) => {
 	const columns = useMemo(() => columnsTemp, []);
 	const data = useMemo(() => dataTemp, []);
 
@@ -37,7 +36,7 @@ const Table = ({ columnsTemp, dataTemp, children, ...props }: TableProps) => {
 		useTable({ columns, data });
 
 	return (
-		<StyledTable>
+		<StyledTable {...props}>
 			<Thead>
 				{headerGroups.map((headerGroup) => (
 					<tr

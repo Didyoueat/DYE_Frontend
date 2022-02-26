@@ -6,6 +6,7 @@ import Label from "@atoms/Label";
 export interface LabelInputProps {
 	width?: any;
 	height?: any;
+	background?: any;
 	label?: any;
 	type?: any;
 	id?: any;
@@ -19,6 +20,7 @@ export interface LabelInputProps {
 const LabelInput = ({
 	width,
 	height,
+	background,
 	label,
 	type,
 	id,
@@ -29,11 +31,14 @@ const LabelInput = ({
 	children,
 }: LabelInputProps) => {
 	return (
-		<Box type="rowFlex">
+		<Box
+			type="rowFlex"
+			width={width}
+			height={height}
+			background={background}
+		>
 			<Label htmlFor={id}>{label}</Label>
 			<Input
-				width={width}
-				height={height}
 				type={type}
 				id={id}
 				value={value}

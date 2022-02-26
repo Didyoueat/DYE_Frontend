@@ -69,6 +69,8 @@ const ShopInfo = (info: any) => {
 				</Button>
 				{shop.showModal && (
 					<ShopInfoForm
+						width="1420px"
+						height="872px"
 						showModal={shop.showModal}
 						handleModal={shop.handleModal}
 						handleComplete={handleInfoComplete}

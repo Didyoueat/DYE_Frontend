@@ -6,14 +6,13 @@ export const HomeBtnStyles = styled(Link)`
 	flex-flow: row wrap;
 	align-items: center;
 	justify-content: flex-start;
-	margin: 1em;
+	margin-left: 24px;
 	color: #333333;
 	font-weight: 700;
 	text-decoration: none;
 `;
 
 export const ImgStyles = styled.img`
-	width: 4em;
-	height: 3em;
-	padding-right: 1em;
+	height: 28px;
+	padding-right: 8px;
 `;

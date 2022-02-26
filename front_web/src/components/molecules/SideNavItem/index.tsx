@@ -9,20 +9,20 @@ interface SSideNavItem {
 }
 
 const SideNavStyles = css<SSideNavItem>`
+	width: 180px;
+	height: 48px;
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	padding: 0.5em 1em;
-	margin: 1em 0.5em;
 	text-align: center;
-	border: 1px solid #000000;
-	border-radius: 50px;
+	margin: auto;
+	padding-left: 28px;
 	text-decoration: none;
 	color: #333333;
 	img {
-		width: 2.5em;
-		height: 2.5em;
-		padding-right: 0.8em;
+		width: 20px;
+		height: 20px;
+		margin-right: 8px;
 	}
 
 	${({ width }) =>
@@ -50,7 +50,7 @@ export interface SideNavItemProps {
 const SideNavItem = ({ to, src, val }: SideNavItemProps) => {
 	const location = window.location.pathname.split("/")[1];
 	return (
-		<Box type="rowFlex">
+		<Box type="rowFlex" width="80%" height="5%">
 			<StyledLink
 				to={to}
 				className={to.split("/")[1] === location ? "isActive" : ""}

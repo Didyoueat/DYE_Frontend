@@ -20,9 +20,16 @@ const DishesInfo = (info) => {
 	};
 
 	return (
-		<Box width="100%" height="100%">
+		<Box width="1564px" height="888px" padding="44px" borderRadius="20px">
 			<Box type="rowFlex">
-				<Button onClick={dishAdd.handleModal}>반찬 추가하기</Button>
+				<Button
+					type="defaultRed"
+					width="212px"
+					height="44px"
+					onClick={dishAdd.handleModal}
+				>
+					반찬 추가하기
+				</Button>
 				{dishAdd.showModal && (
 					<DishAddForm
 						showModal={dishAdd.showModal}
@@ -34,7 +41,9 @@ const DishesInfo = (info) => {
 				)}
 				<DropDown items={["카테고리?", "뭐가", "있지"]} />
 			</Box>
-			<Button onClick={dishDelete.handleModal}>삭제</Button>
+			<Button type="defaultWhite" onClick={dishDelete.handleModal}>
+				삭제
+			</Button>
 			{dishDelete.showModal && (
 				<Modal
 					showModal={dishDelete.showModal}

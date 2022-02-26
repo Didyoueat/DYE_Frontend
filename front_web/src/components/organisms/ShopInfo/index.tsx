@@ -9,7 +9,6 @@ import ShopInfoForm from "@organisms/ShopInfoForm";
 const ShopInfo = (info: any) => {
 	const shopInfo = info.info;
 	const infoArr = [
-		// todo: 이거 따로 타입지정해둘 필요 있는듯,, or redux state에 선언
 		{
 			value: "매장 이름",
 			key: "businessName",

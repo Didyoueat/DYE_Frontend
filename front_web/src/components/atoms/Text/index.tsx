@@ -20,12 +20,18 @@ export const TextTypes = {
 };
 
 interface SText {
+	padding?: string;
 	type?: textType;
 }
 
 const TextStyles = css<SText>`
 	margin: 0;
 	${({ type }) => TextTypes[type]}
+	${({ padding }) =>
+		padding &&
+		css`
+			padding: ${padding};
+		`}
 `;
 
 const StyledText = styled.p<SText>`

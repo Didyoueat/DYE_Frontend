@@ -43,8 +43,15 @@ const ShopInfo = (info: any) => {
 	};
 
 	return (
-		<Box type="colFlex" width="47.5%" height="100%" background="#ffffff">
-			<Box type="rowFlex" width="100%" height="10%">
+		<Box
+			type="colFlex"
+			width="723px"
+			height="885px"
+			padding="44px"
+			borderRadius="20px"
+			// card padding과 margin값이 고정된다면 BoxTypes에 Type을 추가하는 게 더 좋을 것 같다!
+		>
+			<Box type="rowFlex" width="100%">
 				<Text type="title">매장 정보</Text>
 				<Button onClick={shop.handleModal}>수정</Button>
 				{shop.showModal && (

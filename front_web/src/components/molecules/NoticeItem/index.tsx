@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "@atoms/Card";
+import Box from "@atoms/Box";
 import Text from "@atoms/Text";
 
 export interface NoticeItemProps {
@@ -10,11 +10,11 @@ export interface NoticeItemProps {
 
 const NoticeItem = ({ date, title, content }: NoticeItemProps) => {
 	return (
-		<Card border="none" background="#e5e5e5">
+		<Box background="#e5e5e5" border="1px solid #333333" padding="5px">
 			<Text>{date}</Text>
 			<Text type="bold">{title}</Text>
 			<Text>{content}</Text>
-		</Card>
+		</Box>
 	);
 };
 

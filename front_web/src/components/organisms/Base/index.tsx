@@ -25,15 +25,19 @@ const Base = ({ children }: BaseProps) => {
 				<HomeBtn />
 				<TopNav />
 			</Box>
-			<Box
-				type="rowFlex"
-				width="1920px"
-				height="1016px"
-				background="#e5e5e5"
-				display="fixed"
-			>
+			<Box type="rowFlex" width="1920px" height="1016px" display="fixed">
 				<SideNav />
-				{children}
+				<Box
+					type="rowFlex"
+					width="1652px"
+					height="976px"
+					padding="20px"
+					background="#e5e5e5"
+					display="fixed"
+					overflow="scroll"
+				>
+					{children}
+				</Box>
 			</Box>
 		</Box>
 	);

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Box from "@atoms/Box";
+import Text from "@atoms/Text";
 
 import shopImg from "@assets/imshiShopImg.png";
-import Text from "@atoms/Text";
+// todo: 임시 이미지 말고 api 호출하여 프로필 사진 받아와 띄우기
 
 const StyledShopProfile = styled.div`
 	width: 180px;

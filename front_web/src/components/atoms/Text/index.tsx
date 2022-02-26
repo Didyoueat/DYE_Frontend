@@ -24,6 +24,7 @@ interface SText {
 }
 
 const TextStyles = css<SText>`
+	margin: 0;
 	${({ type }) => TextTypes[type]}
 `;
 

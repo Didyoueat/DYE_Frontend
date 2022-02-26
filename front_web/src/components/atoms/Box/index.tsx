@@ -51,6 +51,7 @@ interface SBox {
 	flexAlign?: any;
 	flexJustify?: any;
 	overflow?: any;
+	display?: any;
 	type?: boxType;
 }
 
@@ -96,6 +97,11 @@ const BoxStyles = css<SBox>`
 		overflow &&
 		css`
 			overflow: ${overflow};
+		`}
+	${({ display }) =>
+		display &&
+		css`
+			display: ${display};
 		`}
 `;
 

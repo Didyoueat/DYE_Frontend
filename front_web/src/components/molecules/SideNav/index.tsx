@@ -14,6 +14,7 @@ import dishes_s from "@assets/rice_selected.png";
 import dishes_u from "@assets/rice_unselected.png";
 import shop_s from "@assets/shop_selected.png";
 import shop_u from "@assets/shop_unselected.png";
+import ShopProfile from "@molecules/ShopProfile";
 
 const SideNav = () => {
 	const location = window.location.pathname.split("/")[1];
@@ -57,7 +58,8 @@ const SideNav = () => {
 	];
 
 	return (
-		<Box type="colUpFlex" width="228px" height="100%">
+		<Box type="colUpFlex" width="228px" height="100%" overflow="auto">
+			<ShopProfile dong="매탄동" businessName="동찬이네" />
 			{params.map((params) => (
 				<SideNavItem
 					key={params["key"]}

@@ -84,7 +84,9 @@ const ShopNotice = () => {
 		>
 			<Box type="rowFlex" width="100%">
 				<Text type="title">공지사항</Text>
-				<Button onClick={notice.handleModal}>+</Button>
+				<Button type="circle" onClick={notice.handleModal}>
+					+
+				</Button>
 				{notice.showModal && (
 					<Modal
 						showModal={notice.showModal}
@@ -99,7 +101,7 @@ const ShopNotice = () => {
 			</Box>
 			<Box
 				width="90%"
-				height="90%"
+				height="80%"
 				overflow="scroll"
 				padding="30px 0px 0px 0px"
 			>

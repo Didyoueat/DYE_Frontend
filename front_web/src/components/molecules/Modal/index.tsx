@@ -16,8 +16,12 @@ const Modal = ({
 			{showModal && (
 				<div>
 					{children}
-					<Button onClick={handleModal}>{cancelButton}</Button>
-					<Button onClick={handleComplete}>{submitButton}</Button>
+					<Button type="modalLeft" onClick={handleModal}>
+						{cancelButton}
+					</Button>
+					<Button type="modalRight" onClick={handleComplete}>
+						{submitButton}
+					</Button>
 				</div>
 			)}
 		</Box>

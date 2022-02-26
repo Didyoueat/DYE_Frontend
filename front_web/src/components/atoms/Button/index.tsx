@@ -7,7 +7,8 @@ type buttonType =
 	| "search"
 	| "circle"
 	| "modalLeft"
-	| "modalRight";
+	| "modalRight"
+	| "none";
 
 export const ButtonTypes = {
 	defaultWhite: css`
@@ -62,6 +63,11 @@ export const ButtonTypes = {
 		border-radius: 10px;
 		font-size: 28px;
 		font-weight: 700;
+	`,
+	none: css`
+		padding: 0;
+		border: none;
+		background: none;
 	`,
 };
 

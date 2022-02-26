@@ -11,7 +11,7 @@ export const TextTypes = {
 	title: css`
 		color: #333333;
 		font-weight: 700;
-		font-size: 1.2em;
+		font-size: 48px;
 		text-decoration: none;
 	`,
 	bold: css`

@@ -49,6 +49,7 @@ interface SBox {
 	borderRadius?: any;
 	background?: any;
 	padding?: any;
+	margin?: any;
 	flexAlign?: any;
 	flexJustify?: any;
 	overflow?: any;
@@ -88,6 +89,11 @@ const BoxStyles = css<SBox>`
 		padding &&
 		css`
 			padding: ${padding};
+		`}
+	${({ margin }) =>
+		margin &&
+		css`
+			margin: ${margin};
 		`}
 	${({ flexJustify }) =>
 		flexJustify &&

@@ -3,10 +3,6 @@ import logo from "@assets/logo.svg";
 import Text from "@atoms/Text";
 import { HomeBtnStyles, ImgStyles } from "./styles";
 
-export interface HomeBtnProps {
-	textType?: any;
-}
-
 const HomeBtn = () => {
 	return (
 		<HomeBtnStyles to="/">

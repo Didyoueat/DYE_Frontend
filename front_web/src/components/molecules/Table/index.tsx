@@ -27,11 +27,13 @@ const StyledTable = styled.table<STable>`
 `;
 
 export interface TableProps extends STable {
-	columnsTemp?: any;
-	dataTemp?: any;
+	columns?: any;
+	datas?: any;
+	filter?: any;
+	count?: any;
 }
 
-const Table = ({ columns, datas, filter, count }) => {
+const Table = ({ columns, datas, filter, count }: TableProps) => {
 	const [data] = useState(useMemo(() => datas, []));
 
 	const {

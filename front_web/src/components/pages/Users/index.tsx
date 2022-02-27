@@ -8,30 +8,12 @@ const Users = () => {
 	// 일단 더미데이터 사용
 	const columns = useMemo(
 		() => [
-			{
-				Header: "고객 번호",
-				accessor: "userId",
-			},
-			{
-				Header: "고객명",
-				accessor: "userName",
-			},
-			{
-				Header: "구독 상태",
-				accessor: "subsState",
-			},
-			{
-				Header: "구독 주차",
-				accessor: "subsWeeks",
-			},
-			{
-				Header: "고객 연락처",
-				accessor: "userPhone",
-			},
-			{
-				Header: "지난 주문 보기",
-				accessor: "lastOrder",
-			},
+			{ Header: "고객 번호", accessor: "userId" },
+			{ Header: "고객명", accessor: "userName" },
+			{ Header: "구독 상태", accessor: "subsState" },
+			{ Header: "구독 주차", accessor: "subsWeeks" },
+			{ Header: "고객 연락처", accessor: "userPhone" },
+			{ Header: "지난 주문 보기", accessor: "lastOrder" },
 		],
 		[],
 	);
@@ -193,6 +175,10 @@ const Users = () => {
 		},
 	];
 
+	const [test, setTest] = useState(userData);
+	const [filter, setFilter] = useState("전체");
+	const [flag, setFlag] = useState(false);
+
 	const stateManager = (e) => {
 		setFlag(false);
 		setTest(
@@ -225,10 +211,6 @@ const Users = () => {
 			},
 		],
 	};
-
-	const [test, setTest] = useState(userData);
-	const [filter, setFilter] = useState("전체");
-	const [flag, setFlag] = useState(false);
 
 	useEffect(() => {
 		setFlag(true);

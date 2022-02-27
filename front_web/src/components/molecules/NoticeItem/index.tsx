@@ -23,10 +23,7 @@ const NoticeItem = ({ date, title, content }: NoticeItemProps) => {
 		>
 			<Box type="rowFlex" width="100%" background="#e5e5e5">
 				<Text>{date}</Text>
-				<Button
-					type="none"
-					onClick={(e) => console.log("아직 기능 안만듦")}
-				>
+				<Button type="none" onClick={(e) => console.log(e.target)}>
 					X
 				</Button>
 			</Box>

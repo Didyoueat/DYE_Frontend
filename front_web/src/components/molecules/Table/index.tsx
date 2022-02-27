@@ -1,8 +1,11 @@
-import Tbody from "@atoms/Tbody";
-import Thead from "@atoms/Thead";
-import React, { useMemo } from "react";
-import { useTable } from "react-table";
+import React, { useMemo, useState } from "react";
+import { useGlobalFilter, useTable } from "react-table";
 import styled, { css } from "styled-components";
+import TableSearch from "@molecules/TableSearch";
+import Box from "@atoms/Box";
+import Text from "@atoms/Text";
+import Thead from "@atoms/Thead";
+import Tbody from "@atoms/Tbody";
 
 interface STable {
 	width?: string;
@@ -19,6 +22,8 @@ const TableStyles = css<STable>`
 
 const StyledTable = styled.table<STable>`
 	${TableStyles};
+	border: 1px solid #333333;
+	width: 100%;
 `;
 
 export interface TableProps extends STable {
@@ -26,46 +31,60 @@ export interface TableProps extends STable {
 	dataTemp?: any;
 }
 
-const Table = ({ columnsTemp, dataTemp, ...props }: TableProps) => {
-	const columns = useMemo(() => columnsTemp, []);
-	const data = useMemo(() => dataTemp, []);
+const Table = ({ columns, datas, filter, count }) => {
+	const [data] = useState(useMemo(() => datas, []));
 
-	console.log(columns, data);
-
-	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-		useTable({ columns, data });
+	const {
+		getTableProps,
+		getTableBodyProps,
+		headerGroups,
+		rows,
+		prepareRow,
+		setGlobalFilter,
+	} = useTable({ columns, data }, useGlobalFilter);
 
 	return (
-		<StyledTable {...props}>
-			<Thead>
-				{headerGroups.map((headerGroup) => (
-					<tr
-						key={headerGroup}
-						{...headerGroup.getHeaderGroupProps()}
-					>
-						{headerGroup.headers.map((column) => (
-							<th key={column} {...column.getHeaderProps()}>
-								{column.render("Header")}
-							</th>
-						))}
-					</tr>
-				))}
-			</Thead>
-			<Tbody>
-				{rows.map((row) => {
-					prepareRow(row);
-					return (
-						<tr key={row} {...row.getRowProps()}>
-							{row.cells.map((cell) => (
-								<td key={cell} {...cell.getCellProps()}>
-									{cell.render("Cell")}
-								</td>
+		<>
+			<Box type="rowFlex" width="100%">
+				<Box type="rowFlex">
+					<Text type="bold">총 고객 수: {count}</Text>
+					<span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<Text type="bold">
+						{filter} 수: {rows.length}
+					</Text>
+				</Box>
+				<TableSearch setGlobalFilter={setGlobalFilter} />
+			</Box>
+			<StyledTable {...getTableProps()}>
+				<Thead>
+					{headerGroups.map((headerGroup, idx) => (
+						<tr {...headerGroup.getHeaderGroupProps()} key={idx}>
+							{headerGroup.headers.map((column, idx) => (
+								<th {...column.getHeaderProps()} key={idx}>
+									{column.render("Header")}
+								</th>
 							))}
 						</tr>
-					);
-				})}
-			</Tbody>
-		</StyledTable>
+					))}
+				</Thead>
+				<Tbody {...getTableBodyProps()}>
+					{rows.map((row, idx) => {
+						prepareRow(row);
+						return (
+							<tr {...row.getRowProps()} key={idx}>
+								{row.cells.map((cell, idx) => {
+									return (
+										<td {...cell.getCellProps()} key={idx}>
+											{cell.render("Cell")}
+										</td>
+									);
+								})}
+							</tr>
+						);
+					})}
+				</Tbody>
+			</StyledTable>
+		</>
 	);
 };
 

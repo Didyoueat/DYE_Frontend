@@ -7,6 +7,7 @@ interface STbody {
 }
 
 const TbodyStyles = css<STbody>`
+	text-align: center;
 	${({ color }) =>
 		color &&
 		css`

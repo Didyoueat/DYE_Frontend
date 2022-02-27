@@ -113,6 +113,7 @@ const StyledButton = styled.button<SButton>`
 export interface ButtonProps extends SButton {
 	onClick?: any;
 	children?: ReactChild;
+	value?: any;
 }
 
 const Button = ({ onClick, children, ...props }: ButtonProps) => {

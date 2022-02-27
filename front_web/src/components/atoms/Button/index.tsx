@@ -3,9 +3,10 @@ import styled, { css } from "styled-components";
 
 type buttonType =
 	| "defaultWhite"
-	| "defalutRed"
+	| "defaultRed"
 	| "search"
 	| "circle"
+	| "small"
 	| "modalLeft"
 	| "modalRight"
 	| "none";
@@ -44,6 +45,13 @@ export const ButtonTypes = {
 		border: 2px solid #ff5439;
 		border-radius: 50px;
 	`,
+	small: css`
+		width: 80px;
+		height: 44px;
+		color: #333333;
+		border: 1px solid #333333;
+		border-radius: 20px;
+	`,
 	modalLeft: css`
 		width: 200px;
 		height: 60px;
@@ -72,10 +80,10 @@ export const ButtonTypes = {
 };
 
 interface SButton {
+	type?: buttonType;
 	width?: string;
 	height?: string;
 	color?: string;
-	type?: buttonType;
 }
 
 const ButtonStyles = css<SButton>`
@@ -103,16 +111,14 @@ const StyledButton = styled.button<SButton>`
 `;
 
 export interface ButtonProps extends SButton {
-	type?: any;
 	onClick?: any;
 	children?: ReactChild;
 	value?: any;
 }
 
-
-const Button = ({ type, onClick, children, value }: ButtonProps) => {
+const Button = ({ onClick, children, ...props }: ButtonProps) => {
 	return (
-		<StyledButton type={type} onClick={onClick} value={value} {...props}>
+		<StyledButton onClick={onClick} {...props}>
 			{children}
 		</StyledButton>
 	);

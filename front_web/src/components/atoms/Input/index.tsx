@@ -1,14 +1,49 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+type inputType =
+	| "modal"
+	| "modalCheck"
+	| "modalPost"
+	| "modalText"
+	| "modalPhone";
+
+export const InputTypes = {
+	modal: css`
+		width: 380px;
+		height: 44px;
+		font-size: 24px;
+	`,
+	modalCheck: css`
+		font-size: 24px;
+	`,
+	modalPost: css`
+		width: 295px;
+		height: 44px;
+		font-size: 24px;
+	`,
+	modalText: css`
+		width: 380px;
+		height: 220px;
+		font-size: 24px;
+	`,
+	modalPhone: css`
+		width: 108px;
+		height: 44px;
+		font-size: 24px;
+	`,
+};
+
 interface SInput {
+	styleType?: inputType;
 	width?: any;
 	height?: any;
 	color?: string;
-	// 나중에 style 요소 추가
 }
 
 const InputStyles = css<SInput>`
+	border-radius: 5px;
+	${({ styleType }) => InputTypes[styleType]}
 	${({ width }) =>
 		width &&
 		css`
@@ -22,7 +57,7 @@ const InputStyles = css<SInput>`
 	${({ color }) =>
 		color &&
 		css`
-			color: #ff5439;
+			color: ${color};
 		`}
 `;
 
@@ -41,6 +76,7 @@ export interface InputProps extends SInput {
 }
 
 const Input = ({
+	styleType,
 	type,
 	id,
 	onChange,
@@ -51,6 +87,7 @@ const Input = ({
 }: InputProps) => {
 	return (
 		<StyledInput
+			styleType={styleType}
 			type={type}
 			id={id}
 			onChange={onChange}

@@ -106,11 +106,13 @@ export interface ButtonProps extends SButton {
 	type?: any;
 	onClick?: any;
 	children?: ReactChild;
+	value?: any;
 }
 
-const Button = ({ type, onClick, children, ...props }: ButtonProps) => {
+
+const Button = ({ type, onClick, children, value }: ButtonProps) => {
 	return (
-		<StyledButton type={type} onClick={onClick} {...props}>
+		<StyledButton type={type} onClick={onClick} value={value} {...props}>
 			{children}
 		</StyledButton>
 	);

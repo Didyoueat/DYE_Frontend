@@ -124,6 +124,7 @@ const StyledBox = styled.div<SBox>`
 export interface BoxProps extends SBox {
 	children?: any;
 	className?: any;
+	onClick?: any;
 }
 
 const Box = ({ children, ...props }: BoxProps) => {

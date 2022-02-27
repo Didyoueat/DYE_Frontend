@@ -6,6 +6,7 @@ import Select from "@atoms/Select";
 interface SDropDown {
 	width?: any;
 	height?: any;
+	fontSize?: any;
 }
 
 const DropDownStyles = css<SDropDown>`
@@ -34,7 +35,12 @@ export interface DropDownProps extends SDropDown {
 const DropDown = ({ items, onChange, selected, ...props }: DropDownProps) => {
 	return (
 		<StyledDropDown {...props}>
-			<Select defaultValue={selected} onChange={onChange}>
+			<Select
+				width="100%"
+				height="100%"
+				defaultValue={selected}
+				onChange={onChange}
+			>
 				{items.map((item) => {
 					return (
 						<Option key={item} value={item}>

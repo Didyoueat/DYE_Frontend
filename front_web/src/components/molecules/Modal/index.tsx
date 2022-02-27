@@ -16,15 +16,17 @@ const Modal = ({
 	return (
 		<Box type="modal" width={width} height={height}>
 			{showModal && (
-				<div>
+				<Box type="colFlex" background="#f5f4f2">
 					{children}
-					<Button type="modalLeft" onClick={handleModal}>
-						{cancelButton}
-					</Button>
-					<Button type="modalRight" onClick={handleComplete}>
-						{submitButton}
-					</Button>
-				</div>
+					<Box type="rowFlex" width="424px" background="#f5f4f2">
+						<Button type="modalLeft" onClick={handleModal}>
+							{cancelButton}
+						</Button>
+						<Button type="modalRight" onClick={handleComplete}>
+							{submitButton}
+						</Button>
+					</Box>
+				</Box>
 			)}
 		</Box>
 	);

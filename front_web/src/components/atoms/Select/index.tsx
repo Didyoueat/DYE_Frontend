@@ -11,8 +11,9 @@ interface SSelect {
 
 const SelectStyles = css<SSelect>`
 	border: 1px solid #000000;
-	border-redius: 5px;
+	border-radius: 5px;
 	background: #ffffff;
+	font-size: 24px;
 	${({ width }) =>
 		width &&
 		css`

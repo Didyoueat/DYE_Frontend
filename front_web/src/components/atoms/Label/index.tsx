@@ -1,12 +1,21 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+type labelType = "modal";
+
+export const LabelTypes = {
+	modal: css`
+		background: #f5f4f2;
+	`,
+};
+
 interface SLabel {
 	color?: string;
-	// 나중에 style 요소 추가
+	type?: labelType;
 }
 
 const LabelStyles = css<SLabel>`
+	${({ type }) => LabelTypes[type]}
 	${({ color }) =>
 		color &&
 		css`

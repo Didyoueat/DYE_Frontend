@@ -64,7 +64,7 @@ const ShopInfo = (info: any) => {
 		>
 			<Box type="rowFlex" width="100%">
 				<Text type="title">매장 정보</Text>
-				<Button type="defaultRed" onClick={shop.handleModal}>
+				<Button styleType="defaultRed" onClick={shop.handleModal}>
 					수정
 				</Button>
 				{shop.showModal && (

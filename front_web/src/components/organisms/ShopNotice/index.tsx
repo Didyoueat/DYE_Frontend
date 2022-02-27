@@ -84,7 +84,7 @@ const ShopNotice = () => {
 		>
 			<Box type="rowFlex" width="100%">
 				<Text type="title">공지사항</Text>
-				<Button type="circle" onClick={notice.handleModal}>
+				<Button styleType="circle" onClick={notice.handleModal}>
 					+
 				</Button>
 				{notice.showModal && (

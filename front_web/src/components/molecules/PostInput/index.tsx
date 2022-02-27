@@ -29,7 +29,7 @@ const PostInput = ({ label, setValue, value, styleType }: PostInputProps) => {
 					readonly="true"
 				></Input>
 				<Button
-					type="small"
+					styleType="small"
 					onClick={(e) => {
 						e.preventDefault();
 						setSearch(!search);

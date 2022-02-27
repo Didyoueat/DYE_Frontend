@@ -19,10 +19,10 @@ const Modal = ({
 				<Box type="colFlex" background="#f5f4f2">
 					{children}
 					<Box type="rowFlex" width="424px" background="#f5f4f2">
-						<Button type="modalLeft" onClick={handleModal}>
+						<Button styleType="modalLeft" onClick={handleModal}>
 							{cancelButton}
 						</Button>
-						<Button type="modalRight" onClick={handleComplete}>
+						<Button styleType="modalRight" onClick={handleComplete}>
 							{submitButton}
 						</Button>
 					</Box>

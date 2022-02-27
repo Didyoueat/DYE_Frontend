@@ -80,15 +80,15 @@ export const ButtonTypes = {
 };
 
 interface SButton {
-	type?: buttonType;
 	width?: string;
 	height?: string;
 	color?: string;
+	styleType?: buttonType;
 }
 
 const ButtonStyles = css<SButton>`
 	font-size: 18px;
-	${({ type }) => ButtonTypes[type]}
+	${({ styleType }) => ButtonTypes[styleType]}
 	${({ width }) =>
 		width &&
 		css`

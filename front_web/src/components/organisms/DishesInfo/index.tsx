@@ -115,7 +115,7 @@ const DishesInfo = (info) => {
 		<Box width="1564px" height="888px" padding="44px" borderRadius="20px">
 			<Box type="rowFlex">
 				<Button
-					type="defaultRed"
+					styleType="defaultRed"
 					width="212px"
 					height="44px"
 					onClick={dishAdd.handleModal}

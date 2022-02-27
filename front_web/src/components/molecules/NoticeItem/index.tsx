@@ -1,6 +1,7 @@
 import React from "react";
-import Card from "@atoms/Card";
+import Box from "@atoms/Box";
 import Text from "@atoms/Text";
+import Button from "@atoms/Button";
 
 export interface NoticeItemProps {
 	date?: any;
@@ -10,11 +11,28 @@ export interface NoticeItemProps {
 
 const NoticeItem = ({ date, title, content }: NoticeItemProps) => {
 	return (
-		<Card border="none" background="#e5e5e5">
-			<Text>{date}</Text>
+		<Box
+			type="colFlex"
+			width="656px"
+			height="151px"
+			background="#e5e5e5"
+			borderRadius="10px"
+			padding="16px 27px"
+			margin="20px 0px 0px 0px"
+			flexAlign="flex-start"
+		>
+			<Box type="rowFlex" width="100%" background="#e5e5e5">
+				<Text>{date}</Text>
+				<Button
+					type="none"
+					onClick={(e) => console.log("아직 기능 안만듦")}
+				>
+					X
+				</Button>
+			</Box>
 			<Text type="bold">{title}</Text>
 			<Text>{content}</Text>
-		</Card>
+		</Box>
 	);
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-type boxType = "rowFlex" | "colFlex" | "modal";
+type boxType = "rowFlex" | "colFlex" | "colUpFlex" | "modal";
 
 export const BoxTypes = {
 	rowFlex: css`
@@ -10,9 +10,9 @@ export const BoxTypes = {
 		align-items: center;
 		justify-content: space-between;
 		.isActive {
-			border: 1px solid #ff5439;
+			background: #ff5439;
 			border-radius: 50px;
-			color: #ff5439;
+			color: #ffffff;
 		}
 	`,
 	colFlex: css`
@@ -20,6 +20,11 @@ export const BoxTypes = {
 		flex-flow: column wrap;
 		align-items: center;
 		justify-content: space-between;
+	`,
+	colUpFlex: css`
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
 	`,
 	modal: css`
 		position: fixed;
@@ -41,11 +46,14 @@ interface SBox {
 	width?: any;
 	height?: any;
 	border?: any;
+	borderRadius?: any;
 	background?: any;
 	padding?: any;
+	margin?: any;
 	flexAlign?: any;
 	flexJustify?: any;
 	overflow?: any;
+	display?: any;
 	type?: boxType;
 }
 
@@ -67,6 +75,11 @@ const BoxStyles = css<SBox>`
 		css`
 			border: ${border};
 		`}
+	${({ borderRadius }) =>
+		borderRadius &&
+		css`
+			border-radius: ${borderRadius};
+		`}
 	${({ background }) =>
 		background &&
 		css`
@@ -76,6 +89,11 @@ const BoxStyles = css<SBox>`
 		padding &&
 		css`
 			padding: ${padding};
+		`}
+	${({ margin }) =>
+		margin &&
+		css`
+			margin: ${margin};
 		`}
 	${({ flexJustify }) =>
 		flexJustify &&
@@ -91,6 +109,11 @@ const BoxStyles = css<SBox>`
 		overflow &&
 		css`
 			overflow: ${overflow};
+		`}
+	${({ display }) =>
+		display &&
+		css`
+			display: ${display};
 		`}
 `;
 

@@ -10,7 +10,7 @@ const LabelStyles = css<SLabel>`
 	${({ color }) =>
 		color &&
 		css`
-			color: #ff5439;
+			color: ${color};
 		`}
 `;
 

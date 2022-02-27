@@ -15,7 +15,7 @@ type pageState = {
 
 // 초기상태 정의
 const initialState = {
-	pagename: "schedule",
+	pagename: "dashboard",
 	subpage: "main",
 };
 

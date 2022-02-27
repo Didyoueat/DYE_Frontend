@@ -2,8 +2,8 @@ import React from "react";
 import Box from "@atoms/Box";
 import SideNavItem from "@molecules/SideNavItem";
 
-import schedule_s from "@assets/calendar_selected.png";
-import schedule_u from "@assets/calendar_unselected.png";
+import dashboard_s from "@assets/dashboard_selected.png";
+import dashboard_u from "@assets/dashboard_unselected.png";
 import orders_s from "@assets/clipboard_selected.png";
 import orders_u from "@assets/clipboard_unselected.png";
 import users_s from "@assets/user_selected.png";
@@ -14,14 +14,15 @@ import dishes_s from "@assets/rice_selected.png";
 import dishes_u from "@assets/rice_unselected.png";
 import shop_s from "@assets/shop_selected.png";
 import shop_u from "@assets/shop_unselected.png";
+import ShopProfile from "@molecules/ShopProfile";
 
 const SideNav = () => {
 	const location = window.location.pathname.split("/")[1];
 	const params = [
 		{
-			key: "schedule",
-			selected: schedule_s,
-			unselected: schedule_u,
+			key: "dashboard",
+			selected: dashboard_s,
+			unselected: dashboard_u,
 			val: "일정 관리",
 		},
 		{
@@ -57,7 +58,8 @@ const SideNav = () => {
 	];
 
 	return (
-		<Box type="colFlex" height="100%">
+		<Box type="colUpFlex" width="228px" height="100%" overflow="auto">
+			<ShopProfile dong="매탄동" businessName="동찬이네" />
 			{params.map((params) => (
 				<SideNavItem
 					key={params["key"]}

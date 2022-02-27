@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
 		height: 100%;
 	}
 	body {
+		font-size: 18px;
 		width: 100%;
 		height: 100%;
 		margin: 0;
@@ -32,7 +33,7 @@ function App() {
 			<GlobalStyle />
 			<Routes>
 				<Route path="/" element={<Temp />} />
-				<Route path="/schedule" element={<Temp />} />
+				<Route path="/dashboard" element={<Temp />} />
 				<Route path="/orders" element={<Temp />} />
 				<Route path="/users" element={<Users />} />
 				<Route path="/reviews" element={<Temp />} />

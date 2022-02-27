@@ -4,6 +4,8 @@ import Button from "@atoms/Button";
 import { ModalProps } from "@interfaces/modal.interface";
 
 const Modal = ({
+	width,
+	height,
 	showModal,
 	handleModal,
 	handleComplete,
@@ -12,12 +14,16 @@ const Modal = ({
 	children,
 }: ModalProps) => {
 	return (
-		<Box type="modal">
+		<Box type="modal" width={width} height={height}>
 			{showModal && (
 				<div>
 					{children}
-					<Button onClick={handleModal}>{cancelButton}</Button>
-					<Button onClick={handleComplete}>{submitButton}</Button>
+					<Button type="modalLeft" onClick={handleModal}>
+						{cancelButton}
+					</Button>
+					<Button type="modalRight" onClick={handleComplete}>
+						{submitButton}
+					</Button>
 				</div>
 			)}
 		</Box>

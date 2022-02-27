@@ -3,13 +3,20 @@ import useModal from "@hooks/useModal";
 import Box from "@atoms/Box";
 import Button from "@atoms/Button";
 import Text from "@atoms/Text";
-import LabelText from "@molecules/LabelText";
 import ShopInfoForm from "@organisms/ShopInfoForm";
+import Label from "@atoms/Label";
+
+const getDayOff = (dayOff: boolean[]) => {
+	const weekDays = ["월", "화", "수", "목", "금", "토", "일"];
+	let days = "";
+	for (let i = 0; i < dayOff.length; i++)
+		if (dayOff[i]) days += weekDays[i] + ", ";
+	return days.slice(0, -2);
+};
 
 const ShopInfo = (info: any) => {
 	const shopInfo = info.info;
 	const infoArr = [
-		// todo: 이거 따로 타입지정해둘 필요 있는듯,, or redux state에 선언
 		{
 			value: "매장 이름",
 			key: "businessName",
@@ -17,8 +24,12 @@ const ShopInfo = (info: any) => {
 		},
 		{ value: "대표 사진", key: "imageUrl", data: shopInfo.imageUrl },
 		{ value: "매장 주소", key: "address", data: shopInfo.address },
-		{ value: "운영 시간", key: "officeHour", data: shopInfo.officeHour },
-		{ value: "휴무일", key: "dayOff", data: shopInfo.dayOff },
+		{
+			value: "운영 시간",
+			key: "officeHour",
+			data: shopInfo.officeHour[0] + "~" + shopInfo.officeHour[1],
+		},
+		{ value: "휴무일", key: "dayOff", data: getDayOff(shopInfo.dayOff) },
 		{
 			value: "매장 연락처",
 			key: "businessPhone",
@@ -43,12 +54,23 @@ const ShopInfo = (info: any) => {
 	};
 
 	return (
-		<Box type="colFlex" width="47.5%" height="100%" background="#ffffff">
-			<Box type="rowFlex" width="100%" height="10%">
+		<Box
+			type="colUpFlex"
+			width="723px"
+			height="885px"
+			padding="44px"
+			borderRadius="20px"
+			// card padding과 margin값이 고정된다면 BoxTypes에 Type을 추가하는 게 더 좋을 것 같다!
+		>
+			<Box type="rowFlex" width="100%">
 				<Text type="title">매장 정보</Text>
-				<Button onClick={shop.handleModal}>수정</Button>
+				<Button type="defaultRed" onClick={shop.handleModal}>
+					수정
+				</Button>
 				{shop.showModal && (
 					<ShopInfoForm
+						width="1420px"
+						height="872px"
 						showModal={shop.showModal}
 						handleModal={shop.handleModal}
 						handleComplete={handleInfoComplete}
@@ -61,19 +83,33 @@ const ShopInfo = (info: any) => {
 			<Box
 				type="rowFlex"
 				width="100%"
-				height="90%"
-				flexAlign="flex-start"
+				height="700px"
+				margin="28px 0px 0px 0px"
 			>
-				<img src="" alt="대충 대표 사진" width="20%" />
-				<Box type="colFlex" width="80%" flexJustify="flex-start">
+				<Box
+					type="colFlex"
+					width="180px"
+					height="684px"
+					margin="16px 8px 0px 0px"
+					flexAlign="flex-end"
+				>
 					{infoArr.map((info) => (
-						<LabelText
-							key={info.value}
-							label={info.value}
-							id={info.key}
-						>
+						<Label key={info.key} htmlFor={info.key}>
+							{info.value}:
+						</Label>
+					))}
+				</Box>
+				<Box
+					type="colFlex"
+					width="520px"
+					height="684px"
+					margin="16px 8px 0px 0px"
+					flexAlign="flex-start"
+				>
+					{infoArr.map((info) => (
+						<Text key={info.key} type="bold">
 							{info.data}
-						</LabelText>
+						</Text>
 					))}
 				</Box>
 			</Box>

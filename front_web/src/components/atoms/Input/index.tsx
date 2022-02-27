@@ -37,6 +37,7 @@ export interface InputProps extends SInput {
 	value?: any;
 	readonly?: any;
 	checked?: any;
+	placeholder?: any;
 }
 
 const Input = ({
@@ -46,6 +47,7 @@ const Input = ({
 	value,
 	readonly,
 	checked,
+	placeholder,
 }: InputProps) => {
 	return (
 		<StyledInput
@@ -54,7 +56,8 @@ const Input = ({
 			onChange={onChange}
 			value={value}
 			{...(readonly && "readonly")}
-			checked={checked && "checked"}
+			checked={checked}
+			placeholder={placeholder}
 		/>
 	);
 };

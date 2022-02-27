@@ -28,11 +28,12 @@ export interface OptionProps extends SOption {
 	value?: any;
 	onChange?: any;
 	children?: any;
+	key?: any;
 }
 
-const Option = ({ value, onChange, children }: OptionProps) => {
+const Option = ({ value, onChange, children, key }: OptionProps) => {
 	return (
-		<StyledOption value={value} onChange={onChange}>
+		<StyledOption value={value} onChange={onChange} key={key}>
 			{children}
 		</StyledOption>
 	);

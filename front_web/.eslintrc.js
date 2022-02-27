@@ -21,6 +21,14 @@ module.exports = {
 		extends: ["airbnb", "prettier"],
 	},
 	rules: {
+		"react/prop-types": [
+			0,
+			{
+				ignore: ["ignore"],
+				customValidators: ["customValidator"],
+				skipUndeclared: true,
+			},
+		],
 		"@typescript-eslint/explicit-function-return-type": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/no-explicit-any": "off",

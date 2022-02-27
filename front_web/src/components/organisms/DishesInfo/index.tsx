@@ -3,16 +3,20 @@ import useModal from "@hooks/useModal";
 import Box from "@atoms/Box";
 import Button from "@atoms/Button";
 import DishAddForm from "@organisms/DishAddForm";
+import Table from "@molecules/Table";
 
 // import Modal from "@molecules/Modal";
-// import img from "@assets/imshiShopImg.png";
-import Table from "@molecules/Table";
+import img from "@assets/imshiShopImg.png";
+
+const ImgCell = (cell) => {
+	return <img src={cell.cell.value} />;
+};
 
 const DishesInfo = (info) => {
 	// 일단 더미데이터 사용, api 요청 시 info 사용
 	const columns = useMemo(
 		() => [
-			{ Header: "반찬 사진", accessor: "imageUrl" },
+			{ Header: "반찬 사진", accessor: "imageUrl", Cell: ImgCell },
 			{ Header: "반찬 이름", accessor: "title" },
 			{ Header: "반찬 유형", accessor: "main" },
 			{ Header: "무게(g)", accessor: "weight" },
@@ -23,70 +27,70 @@ const DishesInfo = (info) => {
 
 	const dishData = [
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "제육볶음",
 			main: "메인 반찬",
 			weight: 150,
 			price: 5000,
 		},
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "돈까스",
 			main: "메인 반찬",
 			weight: 200,
 			price: 6000,
 		},
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "가지볶음",
 			main: "밑반찬",
 			weight: 150,
 			price: 3000,
 		},
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "아메리카노",
 			main: "밑반찬",
 			weight: 200,
 			price: 3000,
 		},
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "삼겹살",
 			main: "메인 반찬",
 			weight: 300,
 			price: 5000,
 		},
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "멸치볶음",
 			main: "밑반찬",
 			weight: 150,
 			price: 3000,
 		},
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "고사리",
 			main: "밑반찬",
 			weight: 150,
 			price: 3000,
 		},
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "마늘쫑무침",
 			main: "밑반찬",
 			weight: 150,
 			price: 3000,
 		},
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "고추장찌개",
 			main: "메인 반찬",
 			weight: 300,
 			price: 6000,
 		},
 		{
-			// imageUrl: img,
+			imageUrl: img,
 			title: "닭도리탕",
 			main: "메인 반찬",
 			weight: 500,

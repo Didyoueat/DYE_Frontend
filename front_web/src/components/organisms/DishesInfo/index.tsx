@@ -8,6 +8,7 @@ import Table from "@molecules/Table";
 // import Modal from "@molecules/Modal";
 import img from "@assets/imshiShopImg.png";
 
+// todo: 다른 컴포넌트에서도 사용한다면 따로 빼기
 const ImgCell = (cell) => {
 	return <img src={cell.cell.value} />;
 };

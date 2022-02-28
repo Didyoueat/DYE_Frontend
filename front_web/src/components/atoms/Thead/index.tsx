@@ -10,7 +10,7 @@ const TheadStyles = css<SThead>`
 	${({ color }) =>
 		color &&
 		css`
-			color: #ff5439;
+			color: ${color};
 		`}
 `;
 

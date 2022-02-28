@@ -5,6 +5,7 @@ import Temp from "@pages/Temp";
 import Shop from "@pages/Shop";
 import Dishes from "@pages/Dishes";
 import Users from "@pages/Users";
+import Orders from "@pages/Orders";
 
 const GlobalStyle = createGlobalStyle`
 	html {
@@ -34,7 +35,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Temp />} />
 				<Route path="/dashboard" element={<Temp />} />
-				<Route path="/orders" element={<Temp />} />
+				<Route path="/orders" element={<Orders />} />
 				<Route path="/users" element={<Users />} />
 				<Route path="/reviews" element={<Temp />} />
 				<Route path="/dishes" element={<Dishes />} />

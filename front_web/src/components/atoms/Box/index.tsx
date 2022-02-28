@@ -1,7 +1,12 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-type boxType = "rowFlex" | "colFlex" | "colUpFlex" | "modal";
+type boxType =
+	| "rowFlex"
+	| "colFlex"
+	| "colUpFlex"
+	| "modal"
+	| "filterButtonWrapper";
 
 export const BoxTypes = {
 	rowFlex: css`
@@ -39,6 +44,12 @@ export const BoxTypes = {
 		text-align: center;
 		background: #f5f4f2;
 		box-shadow: 0px 3px 10px rgba(51, 51, 51, 0.1);
+	`,
+	filterButtonWrapper: css`
+		border-radius: 10px;
+		background: #f5f4f2;
+		margin: 0px 0px 8px 16px;
+		padding: 4px;
 	`,
 };
 

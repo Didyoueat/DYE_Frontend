@@ -7,6 +7,7 @@ import Table from "@molecules/Table";
 
 // import Modal from "@molecules/Modal";
 import img from "@assets/imshiShopImg.png";
+import Text from "@atoms/Text";
 
 // todo: 다른 컴포넌트에서도 사용한다면 따로 빼기
 const ImgCell = (cell) => {
@@ -133,11 +134,7 @@ const DishesInfo = (info) => {
 				)}
 			</Box>
 			<Box type="colFlex" width="100%">
-				<Table
-					columns={columns}
-					datas={dishData}
-					count={dishData.length}
-				/>
+				<Text>Table 들어갈 자리</Text>
 			</Box>
 			{/* <Button type="defaultWhite" onClick={dishDelete.handleModal}>
 				삭제

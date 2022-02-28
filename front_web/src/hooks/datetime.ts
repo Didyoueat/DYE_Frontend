@@ -12,26 +12,35 @@ export const dateToString = (date: Date) => {
 		return data < 10 ? "0" : "";
 	};
 
-	return `${year}년.${underTen(month)}${month}월.${underTen(
+	return `${year}.${underTen(month)}${month}.${underTen(
 		day,
-	)}${day}일 (${weekLabel}) ${division} ${hour}시`;
+	)}${day} (${weekLabel}) ${division} ${hour}시`;
 };
 
-export const stringToDate = (date: string) => {
+export const stringToDate = (date: string, yymmdd?: boolean) => {
 	const dateSplit = date.split(" ");
 	const getDate = (idx: number) => {
-		const yymmddhh = idx !== 3 ? dateSplit[0].split(".") : dateSplit;
+		const yymmddhh =
+			idx !== 3
+				? dateSplit[0].split(".")[idx]
+				: dateSplit[idx].substring(0, dateSplit[idx].length - 1);
 
-		return parseInt(
-			yymmddhh[idx].substring(0, yymmddhh[idx].length - 1),
-			10,
-		);
+		return parseInt(yymmddhh, 10);
 	};
 
 	const year = getDate(0);
 	const month = getDate(1) - 1;
 	const day = getDate(2);
-	const hour = getDate(3) + (dateSplit[2] === "오후" ? 12 : 0);
+	const hour = !yymmdd ? getDate(3) + (dateSplit[2] === "오후" ? 12 : 0) : 9;
 
 	return new Date(year, month, day, hour);
+};
+
+export const formatCalendarDate = (date: Date) => {
+	const year = date.getFullYear();
+	const month = date.getMonth() + 1;
+	const day = date.getDate();
+	return `${year}-${month < 10 ? "0" : ""}${month}-${
+		day < 10 ? "0" : ""
+	}${day}`;
 };

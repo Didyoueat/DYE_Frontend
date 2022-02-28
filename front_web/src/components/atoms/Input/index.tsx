@@ -6,7 +6,8 @@ type inputType =
 	| "modalCheck"
 	| "modalPost"
 	| "modalText"
-	| "modalPhone";
+	| "modalPhone"
+	| "tableSearch";
 
 export const InputTypes = {
 	modal: css`
@@ -31,6 +32,19 @@ export const InputTypes = {
 		width: 108px;
 		height: 44px;
 		font-size: 24px;
+	`,
+	tableSearch: css`
+		width: 175px;
+		height: 25px;
+		border: none;
+		border-right: 0px;
+		border-top: 0px;
+		boder-left: 0px;
+		boder-bottom: 0px;
+		font-size: 18px;
+		:focus {
+			outline: none;
+		}
 	`,
 };
 

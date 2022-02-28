@@ -13,17 +13,17 @@ interface STable {
 }
 
 const TableStyles = css<STable>`
+	width: 100%;
+	border-radius: 10px;
 	${({ color }) =>
 		color &&
 		css`
-			color: #ff5439;
+			color: ${color};
 		`}
 `;
 
 const StyledTable = styled.table<STable>`
 	${TableStyles};
-	border: 1px solid #333333;
-	width: 100%;
 `;
 
 export interface TableProps extends STable {

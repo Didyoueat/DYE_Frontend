@@ -9,6 +9,8 @@ type buttonType =
 	| "small"
 	| "modalLeft"
 	| "modalRight"
+	| "filterRed"
+	| "filterNone"
 	| "none";
 
 export const ButtonTypes = {
@@ -72,6 +74,22 @@ export const ButtonTypes = {
 		font-size: 28px;
 		font-weight: 700;
 	`,
+	filterRed: css`
+		width: 136px;
+		height: 36px;
+		color: #ffffff;
+		background: #ff5439;
+		border: 1px solid #ff5439;
+		border-radius: 10px;
+	`,
+	filterNone: css`
+		width: 136px;
+		height: 36px;
+		color: #868686;
+		background: #f5f4f2;
+		border: none;
+		border-radius: 10px;
+	`,
 	none: css`
 		padding: 0;
 		border: none;
@@ -111,6 +129,7 @@ const StyledButton = styled.button<SButton>`
 `;
 
 export interface ButtonProps extends SButton {
+	className?: any;
 	onClick?: any;
 	children?: ReactChild;
 	value?: any;

@@ -219,32 +219,6 @@ const Orders = () => {
 		},
 	];
 
-	const [data, setData] = useState(userData);
-	const [filter, setFilter] = useState("전체");
-	const [flag, setFlag] = useState(false);
-
-	const buttonStateManager = (e, flag: string) => {
-		setFlag(false);
-		setData(
-			userData.filter(
-				(value) =>
-					e.target.value === "전체" || e.target.value === value[flag],
-			),
-		);
-		setFilter(e.target.value);
-	};
-
-	const dateStateManager = (e, flag: string) => {
-		setFlag(false);
-		setData(
-			userData.filter(
-				(value) =>
-					e.target.value === "전체" || e.target.value === value[flag],
-			),
-		);
-		setFilter(e.target.value);
-	};
-
 	const filterData = [
 		{
 			type: "button",
@@ -293,6 +267,71 @@ const Orders = () => {
 			data: userData.map((value) => value.deliveryDay),
 		},
 	];
+	const [data, setData] = useState(userData);
+	const [clickedButton, setClickedButton] = useState({
+		idx1: 0,
+		idx2: 0,
+		name: filterData[0].filter[0],
+	});
+	const [clickedDate, setClickedDate] = useState([new Date(), new Date(), 0]);
+	const [flag, setFlag] = useState(false);
+
+	const buttonStateManager = (
+		e,
+		flag: string,
+		idx1: number,
+		idx2: number,
+	) => {
+		setFlag(false);
+		setData(
+			userData.filter(
+				(value) =>
+					e.target.value === "전체" || e.target.value === value[flag],
+			),
+		);
+		setClickedButton({
+			idx1: idx1,
+			idx2: idx2,
+			name: filterData[idx1].filter[idx2],
+		});
+	};
+
+	const dateStateManager = (
+		date: Array<Date>,
+		flag: string,
+		idx1: number,
+		idx2?: number,
+	) => {
+		const startDate = new Date(date[0]);
+		const endDate =
+			startDate > new Date(date[1]) ? startDate : new Date(date[1]);
+
+		setFlag(false);
+
+		setData(
+			userData.filter((value) => {
+				const nowDate = stringToDate(value[flag], true);
+
+				if (startDate === new Date(null)) {
+					return true;
+				} else {
+					return startDate <= nowDate && nowDate <= endDate;
+				}
+			}),
+		);
+
+		if (!idx2) {
+			setClickedDate([startDate, endDate, idx1]);
+			setClickedButton(null);
+		} else {
+			setClickedButton({
+				idx1: idx1,
+				idx2: idx2,
+				name: filterData[idx1].filter[idx2],
+			});
+			setClickedDate(null);
+		}
+	};
 
 	useEffect(() => {
 		setFlag(true);
@@ -300,27 +339,20 @@ const Orders = () => {
 
 	return (
 		<Base>
-			<Box
-				type="rowFlex"
-				padding="0 0.5em"
-				width="80%"
-				height="100%"
-				background="#ffffff"
-			>
-				<Box type="colFlex" width="100%">
-					{!flag ? (
-						"로딩중"
-					) : (
-						<Table
-							columns={columns}
-							datas={data}
-							count={userData.length}
-							buttonStateManager={buttonStateManager}
-							dateStateManager={dateStateManager}
-							filterData={filterData}
-						/>
-					)}
-				</Box>
+			<Box width="100%" height="100%">
+				{!flag ? (
+					"로딩중"
+				) : (
+					<Table
+						columns={columns}
+						datas={data}
+						count={userData.length}
+						buttonStateManager={buttonStateManager}
+						dateStateManager={dateStateManager}
+						filterData={filterData}
+						clickedButton={clickedButton || clickedDate}
+					/>
+				)}
 			</Box>
 		</Base>
 	);

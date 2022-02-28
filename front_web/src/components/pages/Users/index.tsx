@@ -211,26 +211,18 @@ const Users = () => {
 
 	return (
 		<Base>
-			<Box
-				type="rowFlex"
-				padding="0 0.5em"
-				width="80%"
-				height="100%"
-				background="#ffffff"
-			>
-				<Box type="colFlex" width="100%">
-					{!flag ? (
-						"로딩중"
-					) : (
-						<Table
-							columns={columns}
-							datas={data}
-							count={userData.length}
-							buttonStateManager={buttonStateManager}
-							filterData={filterData}
-						/>
-					)}
-				</Box>
+			<Box width="100%" height="100%">
+				{!flag ? (
+					"로딩중"
+				) : (
+					<Table
+						columns={columns}
+						datas={data}
+						count={userData.length}
+						buttonStateManager={buttonStateManager}
+						filterData={filterData}
+					/>
+				)}
 			</Box>
 		</Base>
 	);

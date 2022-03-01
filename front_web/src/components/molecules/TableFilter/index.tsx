@@ -78,16 +78,33 @@ const TableFilter = ({
 		const month = parseInt(today.split("-")[1], 10) - 1;
 		const day = parseInt(today.split("-")[2], 10);
 		const getDate = (year, month, day) => new Date(year, month, day, 9);
+		const getWeek = (date: Date, flag: number) => {
+			const dayLabel = date.getDay();
+			const start = dayLabel - 1;
+			const end = 7 - dayLabel;
+			const year = date.getFullYear();
+			const month = date.getMonth();
+			const day = date.getDate();
+
+			return [
+				new Date(year, month, day - start + flag * 7, 9),
+				new Date(year, month, day + end + flag * 7, 9),
+			];
+		};
 
 		const dateTemp =
-			filterName === "전체"
-				? [null, null]
-				: filterName === "오늘"
+			filterName === "오늘"
 				? [getDate(year, month, day), getDate(year, month, day)]
 				: filterName === "어제"
 				? [getDate(year, month, day - 1), getDate(year, month, day - 1)]
 				: filterName === "내일"
 				? [getDate(year, month, day + 1), getDate(year, month, day + 1)]
+				: filterName === "이번주"
+				? getWeek(new Date(), 0)
+				: filterName === "지난주"
+				? getWeek(new Date(), -1)
+				: filterName === "다음주"
+				? getWeek(new Date(), 1)
 				: [null, null];
 
 		dateStateManager(dateTemp, flag, idx1, idx2);
@@ -110,7 +127,8 @@ const TableFilter = ({
 									return (
 										<Button
 											styleType={
-												col === clickedButton.name
+												idx1 === clickedButton.idx1 &&
+												idx2 === clickedButton.idx2
 													? "filterRed"
 													: "filterNone"
 											}
@@ -194,7 +212,8 @@ const TableFilter = ({
 									return (
 										<Button
 											styleType={
-												col === clickedButton.name
+												idx1 === clickedButton.idx1 &&
+												idx2 === clickedButton.idx2
 													? "filterRed"
 													: "filterNone"
 											}

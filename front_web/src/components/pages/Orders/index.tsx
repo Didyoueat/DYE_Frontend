@@ -13,6 +13,7 @@ const Orders = () => {
 			{ Header: "주문 번호", accessor: "orderId" },
 			{ Header: "주문 금액", accessor: "orderPrice" },
 			{ Header: "배송 일자", accessor: "deliveryDay" },
+			{ Header: "주문 일자", accessor: "orderDay" },
 			{ Header: "배송 담당자", accessor: "deliveryMan" },
 		],
 		[],
@@ -25,7 +26,7 @@ const Orders = () => {
 			orderId: 1,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28, 7)),
+			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -34,7 +35,7 @@ const Orders = () => {
 			orderId: 2,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28, 7)),
+			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -43,7 +44,7 @@ const Orders = () => {
 			orderId: 3,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28, 7)),
+			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -52,7 +53,7 @@ const Orders = () => {
 			orderId: 4,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 27, 7)),
-			orderDay: dateToString(new Date(2022, 1, 27, 7)),
+			orderDay: dateToString(new Date(2022, 1, 27 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -61,7 +62,7 @@ const Orders = () => {
 			orderId: 5,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 27, 7)),
-			orderDay: dateToString(new Date(2022, 1, 27, 7)),
+			orderDay: dateToString(new Date(2022, 1, 27 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -70,7 +71,7 @@ const Orders = () => {
 			orderId: 6,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 27, 7)),
-			orderDay: dateToString(new Date(2022, 1, 27, 7)),
+			orderDay: dateToString(new Date(2022, 1, 27 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -79,7 +80,7 @@ const Orders = () => {
 			orderId: 7,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 2, 1, 7)),
-			orderDay: dateToString(new Date(2022, 2, 1, 7)),
+			orderDay: dateToString(new Date(2022, 2, 1 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -88,7 +89,7 @@ const Orders = () => {
 			orderId: 8,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 2, 1, 7)),
-			orderDay: dateToString(new Date(2022, 2, 1, 7)),
+			orderDay: dateToString(new Date(2022, 2, 1 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -97,7 +98,7 @@ const Orders = () => {
 			orderId: 9,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 2, 1, 7)),
-			orderDay: dateToString(new Date(2022, 2, 1, 7)),
+			orderDay: dateToString(new Date(2022, 2, 1 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -106,7 +107,7 @@ const Orders = () => {
 			orderId: 10,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 20, 7)),
-			orderDay: dateToString(new Date(2022, 1, 20, 7)),
+			orderDay: dateToString(new Date(2022, 1, 20 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -115,7 +116,7 @@ const Orders = () => {
 			orderId: 11,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 20, 7)),
-			orderDay: dateToString(new Date(2022, 1, 20, 7)),
+			orderDay: dateToString(new Date(2022, 1, 20 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -124,7 +125,7 @@ const Orders = () => {
 			orderId: 12,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 20, 7)),
-			orderDay: dateToString(new Date(2022, 1, 20, 7)),
+			orderDay: dateToString(new Date(2022, 1, 20 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -133,7 +134,7 @@ const Orders = () => {
 			orderId: 13,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 2, 9, 7)),
-			orderDay: dateToString(new Date(2022, 2, 9, 7)),
+			orderDay: dateToString(new Date(2022, 2, 9 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -142,7 +143,7 @@ const Orders = () => {
 			orderId: 14,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 2, 9, 7)),
-			orderDay: dateToString(new Date(2022, 2, 9, 7)),
+			orderDay: dateToString(new Date(2022, 2, 9 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -151,7 +152,7 @@ const Orders = () => {
 			orderId: 15,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 2, 9, 7)),
-			orderDay: dateToString(new Date(2022, 2, 9, 7)),
+			orderDay: dateToString(new Date(2022, 2, 9 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -160,7 +161,7 @@ const Orders = () => {
 			orderId: 16,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 2, 9, 7)),
-			orderDay: dateToString(new Date(2022, 2, 9, 7)),
+			orderDay: dateToString(new Date(2022, 2, 9 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -169,7 +170,7 @@ const Orders = () => {
 			orderId: 17,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28, 7)),
+			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -178,7 +179,7 @@ const Orders = () => {
 			orderId: 18,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28, 7)),
+			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -187,7 +188,7 @@ const Orders = () => {
 			orderId: 19,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28, 7)),
+			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -196,7 +197,7 @@ const Orders = () => {
 			orderId: 20,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28, 7)),
+			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -205,7 +206,7 @@ const Orders = () => {
 			orderId: 21,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28, 7)),
+			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 		{
@@ -214,7 +215,7 @@ const Orders = () => {
 			orderId: 22,
 			orderPrice: 3000,
 			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28, 7)),
+			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
 			deliveryMan: "김성수",
 		},
 	];
@@ -312,15 +313,14 @@ const Orders = () => {
 			userData.filter((value) => {
 				const nowDate = stringToDate(value[flag], true);
 
-				if (startDate === new Date(null)) {
-					return true;
-				} else {
-					return startDate <= nowDate && nowDate <= endDate;
-				}
+				return (
+					(!date[0] && !date[1]) ||
+					(startDate <= nowDate && nowDate <= endDate)
+				);
 			}),
 		);
 
-		if (!idx2) {
+		if (idx2 === null) {
 			setClickedDate([startDate, endDate, idx1]);
 			setClickedButton(null);
 		} else {

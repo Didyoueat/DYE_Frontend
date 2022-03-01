@@ -25,6 +25,7 @@ const StyledButton = styled.button`
 	border: 1px solid #ff5439;
 	border-radius: 0px 5px 5px 0px;
 	font-size: 18px;
+	cursor: pointer;
 `;
 
 const TableSearch = ({ setGlobalFilter }) => {

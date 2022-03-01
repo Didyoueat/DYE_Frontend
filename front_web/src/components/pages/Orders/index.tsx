@@ -19,206 +19,58 @@ const Orders = () => {
 		[],
 	);
 
-	const userData = [
-		{
-			orderState: "결제 대기",
-			userName: "박승한",
-			orderId: 1,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "결제 대기",
-			userName: "김성수",
-			orderId: 2,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "결제 대기",
-			userName: "정현지",
-			orderId: 3,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "결제 완료",
-			userName: "이지환",
-			orderId: 4,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 27, 7)),
-			orderDay: dateToString(new Date(2022, 1, 27 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "결제 완료",
-			userName: "유저 1",
-			orderId: 5,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 27, 7)),
-			orderDay: dateToString(new Date(2022, 1, 27 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "결제 완료",
-			userName: "유저 2",
-			orderId: 6,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 27, 7)),
-			orderDay: dateToString(new Date(2022, 1, 27 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "준비 중",
-			userName: "유저 3",
-			orderId: 7,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 2, 1, 7)),
-			orderDay: dateToString(new Date(2022, 2, 1 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "준비 중",
-			userName: "유저 4",
-			orderId: 8,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 2, 1, 7)),
-			orderDay: dateToString(new Date(2022, 2, 1 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "준비 중",
-			userName: "유저 5",
-			orderId: 9,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 2, 1, 7)),
-			orderDay: dateToString(new Date(2022, 2, 1 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "배송 대기",
-			userName: "유저 6",
-			orderId: 10,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 20, 7)),
-			orderDay: dateToString(new Date(2022, 1, 20 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "배송 대기",
-			userName: "유저 7",
-			orderId: 11,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 20, 7)),
-			orderDay: dateToString(new Date(2022, 1, 20 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "배송 대기",
-			userName: "유저 8",
-			orderId: 12,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 20, 7)),
-			orderDay: dateToString(new Date(2022, 1, 20 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "배송 중",
-			userName: "유저 9",
-			orderId: 13,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 2, 9, 7)),
-			orderDay: dateToString(new Date(2022, 2, 9 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "배송 중",
-			userName: "유저 10",
-			orderId: 14,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 2, 9, 7)),
-			orderDay: dateToString(new Date(2022, 2, 9 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "배송 중",
-			userName: "유저 11",
-			orderId: 15,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 2, 9, 7)),
-			orderDay: dateToString(new Date(2022, 2, 9 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "배송 완료",
-			userName: "유저 12",
-			orderId: 16,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 2, 9, 7)),
-			orderDay: dateToString(new Date(2022, 2, 9 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "배송 완료",
-			userName: "유저 13",
-			orderId: 17,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "배송 완료",
-			userName: "유저 14",
-			orderId: 18,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "주문 취소",
-			userName: "유저 15",
-			orderId: 19,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "주문 취소",
-			userName: "유저 16",
-			orderId: 20,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "주문 취소",
-			userName: "유저 17",
-			orderId: 21,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-		{
-			orderState: "주문 취소",
-			userName: "유저 18",
-			orderId: 22,
-			orderPrice: 3000,
-			deliveryDay: dateToString(new Date(2022, 1, 28, 7)),
-			orderDay: dateToString(new Date(2022, 1, 28 - 1, 7)),
-			deliveryMan: "김성수",
-		},
-	];
+	const userData = () => {
+		const dummy = [];
+
+		for (let i = 0; i < 250; i++) {
+			dummy.push({
+				orderState:
+					i < 3
+						? "결제 대기"
+						: i < 6
+						? "결제 완료"
+						: i < 9
+						? "준비 중"
+						: i < 12
+						? "배송 대기"
+						: i < 15
+						? "배송 중"
+						: i < 18
+						? "배송 완료"
+						: "주문 취소",
+				userName: `유저 ${i + 1}`,
+				orderId: i + 1,
+				orderPrice: 3000,
+				deliveryDay:
+					i < 3
+						? dateToString(new Date(2022, 1, 28, 7))
+						: i < 6
+						? dateToString(new Date(2022, 2, 1, 7))
+						: i < 9
+						? dateToString(new Date(2022, 2, 2, 7))
+						: i < 12
+						? dateToString(new Date(2022, 2, 9, 7))
+						: i < 15
+						? dateToString(new Date(2022, 1, 25, 7))
+						: dateToString(new Date(2022, 0, 28, 7)),
+				orderDay:
+					i < 3
+						? dateToString(new Date(2022, 1, 28 - 1, 7))
+						: i < 6
+						? dateToString(new Date(2022, 2, 1 - 1, 7))
+						: i < 9
+						? dateToString(new Date(2022, 2, 2 - 1, 7))
+						: i < 12
+						? dateToString(new Date(2022, 2, 9 - 1, 7))
+						: i < 15
+						? dateToString(new Date(2022, 1, 25 - 1, 7))
+						: dateToString(new Date(2022, 0, 28 - 1, 7)),
+				deliveryMan: "김성수",
+			});
+		}
+
+		return dummy;
+	};
 
 	const filterData = [
 		{
@@ -235,7 +87,7 @@ const Orders = () => {
 				"주문 취소",
 			],
 			flag: "orderState",
-			data: userData.map((value) => value.orderState),
+			data: userData().map((value) => value.orderState),
 		},
 		{
 			type: "date",
@@ -250,7 +102,7 @@ const Orders = () => {
 				"다음주",
 			],
 			flag: "orderDay",
-			data: userData.map((value) => value.orderDay),
+			data: userData().map((value) => value.orderDay),
 		},
 		{
 			type: "date",
@@ -265,7 +117,7 @@ const Orders = () => {
 				"다음주",
 			],
 			flag: "deliveryDay",
-			data: userData.map((value) => value.deliveryDay),
+			data: userData().map((value) => value.deliveryDay),
 		},
 	];
 	const [data, setData] = useState(userData);
@@ -285,7 +137,7 @@ const Orders = () => {
 	) => {
 		setFlag(false);
 		setData(
-			userData.filter(
+			userData().filter(
 				(value) =>
 					e.target.value === "전체" || e.target.value === value[flag],
 			),
@@ -310,7 +162,7 @@ const Orders = () => {
 		setFlag(false);
 
 		setData(
-			userData.filter((value) => {
+			userData().filter((value) => {
 				const nowDate = stringToDate(value[flag], true);
 
 				return (
@@ -339,21 +191,19 @@ const Orders = () => {
 
 	return (
 		<Base>
-			<Box width="100%" height="100%">
-				{!flag ? (
-					"로딩중"
-				) : (
-					<Table
-						columns={columns}
-						datas={data}
-						count={userData.length}
-						buttonStateManager={buttonStateManager}
-						dateStateManager={dateStateManager}
-						filterData={filterData}
-						clickedButton={clickedButton || clickedDate}
-					/>
-				)}
-			</Box>
+			{!flag ? (
+				"로딩중"
+			) : (
+				<Table
+					columns={columns}
+					datas={data}
+					count={userData().length}
+					buttonStateManager={buttonStateManager}
+					dateStateManager={dateStateManager}
+					filterData={filterData}
+					clickedButton={clickedButton || clickedDate}
+				/>
+			)}
 		</Base>
 	);
 };

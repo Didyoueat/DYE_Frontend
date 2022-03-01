@@ -18,7 +18,7 @@ const Base = ({ children }: BaseProps) => {
 			type="colFlex"
 			width="100%"
 			height="100%"
-			background="#e5e5e5"
+			background="#f3f1ee"
 			display="fixed"
 		>
 			<Box type="rowFlex" width="1920px" height="64px">
@@ -32,9 +32,8 @@ const Base = ({ children }: BaseProps) => {
 					width="1652px"
 					height="976px"
 					padding="20px"
-					background="#e5e5e5"
+					background="#f3f1ee"
 					display="fixed"
-					overflow="scroll"
 				>
 					{children}
 				</Box>

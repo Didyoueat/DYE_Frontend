@@ -7,7 +7,8 @@ type inputType =
 	| "modalPost"
 	| "modalText"
 	| "modalPhone"
-	| "tableSearch";
+	| "tableSearch"
+	| "date";
 
 export const InputTypes = {
 	modal: css`
@@ -46,6 +47,12 @@ export const InputTypes = {
 			outline: none;
 		}
 	`,
+	date: css`
+		width: 136px;
+		height: 36px;
+		margin: 0px 0px 8px 0px;
+		border: 1px solid #868686;
+	`,
 };
 
 interface SInput {
@@ -63,16 +70,16 @@ const InputStyles = css<SInput>`
 		css`
 			width: ${width};
 		`}
-	${({ height }) =>
+		${({ height }) =>
 		height &&
 		css`
 			height: ${height};
 		`}
-	${({ color }) =>
+		${({ color }) =>
 		color &&
 		css`
 			color: ${color};
-		`}
+		`};
 `;
 
 const StyledInput = styled.input<SInput>`

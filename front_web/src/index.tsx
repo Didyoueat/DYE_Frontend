@@ -6,6 +6,7 @@ import { CookiesProvider } from "react-cookie";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import rootReducer from "@redux/index";
+import "./index.css";
 
 const store = createStore(rootReducer);
 

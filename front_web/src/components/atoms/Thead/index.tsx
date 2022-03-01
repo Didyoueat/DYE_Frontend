@@ -7,6 +7,7 @@ interface SThead {
 }
 
 const TheadStyles = css<SThead>`
+	height: 60px;
 	${({ color }) =>
 		color &&
 		css`

@@ -1,20 +1,20 @@
 import React from "react";
 import Box from "@atoms/Box";
 import SideNavItem from "@molecules/SideNavItem";
-
-import dashboard_s from "@assets/dashboard_selected.png";
-import dashboard_u from "@assets/dashboard_unselected.png";
-import orders_s from "@assets/clipboard_selected.png";
-import orders_u from "@assets/clipboard_unselected.png";
-import users_s from "@assets/user_selected.png";
-import users_u from "@assets/user_unselected.png";
-import reviews_s from "@assets/star_selected.png";
-import reviews_u from "@assets/star_unselected.png";
-import dishes_s from "@assets/rice_selected.png";
-import dishes_u from "@assets/rice_unselected.png";
-import shop_s from "@assets/shop_selected.png";
-import shop_u from "@assets/shop_unselected.png";
 import ShopProfile from "@molecules/ShopProfile";
+
+import dashboard_s from "@assets/dashboard_white.svg";
+import dashboard_u from "@assets/dashboard_black.svg";
+import orders_s from "@assets/subscription_white.svg";
+import orders_u from "@assets/subscription_black.svg";
+import users_s from "@assets/customer_white.svg";
+import users_u from "@assets/customer_black.svg";
+import reviews_s from "@assets/star_white.svg";
+import reviews_u from "@assets/star_black.svg";
+import dishes_s from "@assets/banchan_white.svg";
+import dishes_u from "@assets/banchan_black.svg";
+import shop_s from "@assets/shop_white.svg";
+import shop_u from "@assets/shop_black.svg";
 
 const SideNav = () => {
 	const location = window.location.pathname.split("/")[1];

@@ -8,6 +8,9 @@ interface STbody {
 
 const TbodyStyles = css<STbody>`
 	text-align: center;
+	background-color: #ffffff;
+	width: 100%;
+	height: 600px;
 	${({ color }) =>
 		color &&
 		css`

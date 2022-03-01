@@ -49,6 +49,7 @@ export interface SelectProps extends SSelect {
 	defaultValue?: any;
 	onChange?: any;
 	children?: any;
+	value?: any;
 }
 
 const Select = ({ children, ...props }: SelectProps) => {

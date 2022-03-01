@@ -9,8 +9,8 @@ import Orders from "@pages/Orders";
 
 const GlobalStyle = createGlobalStyle`
 	html {
-		width: 100%;
-		height: 100%;
+		width: 1920px;
+		height: 1080px;
 	}
 	body {
 		font-size: 18px;

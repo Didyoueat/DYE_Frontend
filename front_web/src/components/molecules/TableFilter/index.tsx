@@ -3,7 +3,7 @@ import Box from "@atoms/Box";
 import Text from "@atoms/Text";
 import Button from "@atoms/Button";
 import Input from "@atoms/Input";
-import { formatCalendarDate, stringToDate } from "@hooks/datetime";
+import { formatCalendarDate } from "@hooks/datetime";
 
 interface matrix {
 	buttonStateManager: any;
@@ -168,8 +168,9 @@ const TableFilter = ({
 							key={idx1}
 						>
 							<Text type="bold">{`${row.name}`}</Text>
-							<Box type="rowFlex" margin="12px 16px">
+							<Box type="rowFlex" margin="0px 0px 0px 16px">
 								<Input
+									styleType="date"
 									type="date"
 									value={
 										startDate[idx1]
@@ -188,8 +189,9 @@ const TableFilter = ({
 										);
 									}}
 								></Input>
-								~
+								&nbsp;~&nbsp;
 								<Input
+									styleType="date"
 									type="date"
 									value={
 										endDate[idx1]

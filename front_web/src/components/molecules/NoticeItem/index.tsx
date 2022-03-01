@@ -15,13 +15,13 @@ const NoticeItem = ({ date, title, content }: NoticeItemProps) => {
 			type="colFlex"
 			width="656px"
 			height="151px"
-			background="#e5e5e5"
+			background="#f3f1ee"
 			borderRadius="10px"
 			padding="16px 27px"
 			margin="20px 0px 0px 0px"
 			flexAlign="flex-start"
 		>
-			<Box type="rowFlex" width="100%" background="#e5e5e5">
+			<Box type="rowFlex" width="100%" background="#f3f1ee">
 				<Text>{date}</Text>
 				<Button styleType="none" onClick={(e) => console.log(e.target)}>
 					X

@@ -89,6 +89,12 @@ export const ButtonTypes = {
 		background: #f5f4f2;
 		border: none;
 		border-radius: 10px;
+		:hover {
+			background: #dddddd;
+		}
+		:disabled,
+		[disabled] {
+		}
 	`,
 	none: css`
 		padding: 0;
@@ -106,6 +112,7 @@ interface SButton {
 
 const ButtonStyles = css<SButton>`
 	font-size: 18px;
+	cursor: pointer;
 	${({ styleType }) => ButtonTypes[styleType]}
 	${({ width }) =>
 		width &&
@@ -133,6 +140,7 @@ export interface ButtonProps extends SButton {
 	onClick?: any;
 	children?: ReactChild;
 	value?: any;
+	disabled?: any;
 }
 
 const Button = ({ onClick, children, ...props }: ButtonProps) => {

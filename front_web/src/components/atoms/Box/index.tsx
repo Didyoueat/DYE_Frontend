@@ -48,8 +48,8 @@ export const BoxTypes = {
 	filterButtonWrapper: css`
 		border-radius: 10px;
 		background: #f5f4f2;
-		margin: 0px 0px 8px 16px;
-		padding: 4px;
+		margin: 0px 16px 8px 16px;
+		// padding: 4px;
 	`,
 };
 
@@ -65,6 +65,7 @@ interface SBox {
 	flexJustify?: any;
 	overflow?: any;
 	display?: any;
+	boxShadow?: any;
 	type?: boxType;
 }
 

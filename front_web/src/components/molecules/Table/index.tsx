@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useGlobalFilter, usePagination, useTable } from "react-table";
 import styled, { css } from "styled-components";
 import TableFilter from "@molecules/TableFilter";
@@ -9,10 +9,10 @@ import Thead from "@atoms/Thead";
 import Tbody from "@atoms/Tbody";
 import Button from "@atoms/Button";
 
-import angle_bracket_d_l from "@assets/two_arrows_left.svg";
-import angle_bracket_d_r from "@assets/two_arrows_right.svg";
-import angle_bracket_s_l from "@assets/one_arrows_left.svg";
-import angle_bracket_s_r from "@assets/one_arrows_right.svg";
+import angle_bracket_d_l from "@assets/two_arrow_left.svg";
+import angle_bracket_d_r from "@assets/two_arrow_right.svg";
+import angle_bracket_s_l from "@assets/one_arrow_left.svg";
+import angle_bracket_s_r from "@assets/one_arrow_right.svg";
 
 import refreshButton from "@assets/refreshButton.svg";
 
@@ -90,6 +90,19 @@ const Table = ({
 		usePagination,
 	);
 
+	const whiteBody = [
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+		null,
+	];
+
 	return (
 		<>
 			<Box type="colFlex" width="100%" background="#f3f1ee">
@@ -100,6 +113,7 @@ const Table = ({
 					height="144px"
 					margin="0px 0px 20px 0px"
 					padding="32px 40px"
+					boxShadow="0px 3px 10px 0px #3333331A"
 					borderRadius="10px"
 				>
 					<Box type="rowFlex" width="1200px">
@@ -131,7 +145,13 @@ const Table = ({
 				</Box>
 			</Box>
 			{/* 하단 박스 */}
-			<Box type="colFlex" width="100%" height="746px" borderRadius="10px">
+			<Box
+				type="colFlex"
+				width="100%"
+				height="746px"
+				borderRadius="10px"
+				boxShadow="0px 3px 10px 0px #3333331A"
+			>
 				<StyledTable {...getTableProps()}>
 					<Thead>
 						{headerGroups.map((headerGroup, idx) => (
@@ -151,6 +171,7 @@ const Table = ({
 					<Tbody {...getTableBodyProps()}>
 						{page.map((row, idx) => {
 							prepareRow(row);
+
 							return (
 								<tr {...row.getRowProps()} key={idx}>
 									{row.cells.map((cell, idx) => {
@@ -180,7 +201,7 @@ const Table = ({
 							}}
 							disabled={state.pageIndex - 10 < 0}
 						>
-							{"<<"}
+							<img src={angle_bracket_d_l} />
 						</Button>
 					</Box>
 					<Box type="filterButtonWrapper" margin="0px 0px 8px 0px">
@@ -198,7 +219,7 @@ const Table = ({
 							}}
 							disabled={!canPreviousPage}
 						>
-							{"<"}
+							<img src={angle_bracket_s_l} />
 						</Button>
 					</Box>
 					<Box type="rowFlex" width="480px" flexJustify="center">
@@ -218,7 +239,6 @@ const Table = ({
 											key={idx}
 											onClick={() => {
 												gotoPage(idx);
-												console.log(idx);
 											}}
 										>
 											{idx + 1}
@@ -243,7 +263,7 @@ const Table = ({
 							}}
 							disabled={!canNextPage}
 						>
-							{">"}
+							<img src={angle_bracket_s_r} />
 						</Button>
 					</Box>
 					<Box margin="0px 0px 8px 12px">

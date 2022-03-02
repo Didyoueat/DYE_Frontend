@@ -9,8 +9,8 @@ import Orders from "@pages/Orders";
 
 const GlobalStyle = createGlobalStyle`
 	html {
-		width: 1920px;
-		height: 1080px;
+		width: 100%;
+		height: 100%;
 	}
 	body {
 		font-size: 18px;
@@ -18,9 +18,11 @@ const GlobalStyle = createGlobalStyle`
 		height: 100%;
 		margin: 0;
 		padding: 0;
+		
+		overflow: scroll;
 		// position: fixed;
-		// overflow: hidden;
 		// touch-action: none;
+		// todo: 브라우저 크기가 작아지면 font-size 줄이기
 	}
 	#root {
 		width: 100%;

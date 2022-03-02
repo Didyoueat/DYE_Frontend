@@ -15,7 +15,6 @@ const SideNavStyles = css<SSideNavItem>`
 	flex-flow: row wrap;
 	align-items: center;
 	text-align: center;
-	margin: auto;
 	padding-left: 28px;
 	text-decoration: none;
 	color: #333333;

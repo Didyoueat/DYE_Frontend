@@ -65,6 +65,8 @@ interface SBox {
 	flexJustify?: any;
 	overflow?: any;
 	display?: any;
+	position?: any;
+	zIndex?: any;
 	boxShadow?: any;
 	type?: boxType;
 }
@@ -127,6 +129,21 @@ const BoxStyles = css<SBox>`
 		css`
 			display: ${display};
 		`}
+	${({ position }) =>
+		position &&
+		css`
+			position: ${position};
+		`}
+	${({ zIndex }) =>
+		zIndex &&
+		css`
+			z-index: ${zIndex};
+		`}
+	${({ boxShadow }) =>
+		boxShadow &&
+		css`
+			box-shadow: ${boxShadow};
+		`}
 `;
 
 const StyledBox = styled.div<SBox>`
@@ -137,6 +154,7 @@ export interface BoxProps extends SBox {
 	children?: any;
 	className?: any;
 	onClick?: any;
+	onScroll?: any;
 }
 
 const Box = ({ children, ...props }: BoxProps) => {

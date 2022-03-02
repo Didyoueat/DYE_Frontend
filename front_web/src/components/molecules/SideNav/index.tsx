@@ -58,7 +58,7 @@ const SideNav = () => {
 	];
 
 	return (
-		<Box type="colUpFlex" width="228px" height="100%" overflow="auto">
+		<Box type="colUpFlex" width="228px" height="1016px">
 			<ShopProfile dong="매탄동" businessName="동찬이네" />
 			{params.map((params) => (
 				<SideNavItem

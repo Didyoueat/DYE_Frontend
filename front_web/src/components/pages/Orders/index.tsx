@@ -120,7 +120,7 @@ const Orders = () => {
 			data: userData().map((value) => value.deliveryDay),
 		},
 	];
-	const [data, setData] = useState(userData);
+	const [data, setData] = useState(userData());
 	const [clickedButton, setClickedButton] = useState({
 		idx1: 0,
 		idx2: 0,
@@ -189,14 +189,33 @@ const Orders = () => {
 		setFlag(true);
 	}, [data]);
 
+	const settingData = (originData) => {
+		const newData = originData;
+		const necessaryRow = 10 - (originData.length % 10);
+		const column = columns.map((value) => value.accessor);
+		if (necessaryRow !== 10 || !originData.length) {
+			for (let i = 0; i < necessaryRow; i++) {
+				const row = () => {
+					const newRow = {};
+
+					column.map((value) => {
+						newRow[value] = "ㅤ";
+					});
+					return newRow;
+				};
+
+				newData.push(row());
+			}
+		}
+		return newData;
+	};
+	settingData(data);
 	return (
 		<Base>
-			{!flag ? (
-				"로딩중"
-			) : (
+			{!flag ? null : (
 				<Table
 					columns={columns}
-					datas={data}
+					datas={settingData(data)}
 					count={userData().length}
 					buttonStateManager={buttonStateManager}
 					dateStateManager={dateStateManager}
